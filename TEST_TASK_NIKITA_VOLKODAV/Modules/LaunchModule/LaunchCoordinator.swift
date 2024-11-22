@@ -9,5 +9,9 @@ final class LaunchCoordinator: BaseCoordinator {
     }
     
     func runTabBar() {
+        let tabBarCoordinator = TabBarCoordinator(navigationController: navigationController)
+        tabBarCoordinator.parentCoordinator = self
+        add(coordinator: tabBarCoordinator)
+        tabBarCoordinator.start()
     }
 }

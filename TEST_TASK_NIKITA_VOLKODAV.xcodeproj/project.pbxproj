@@ -21,6 +21,17 @@
 		7F15CCB72CEF7E9A00EEC811 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCB62CEF7E9A00EEC811 /* LaunchViewModel.swift */; };
 		7F15CCB92CEF80F600EEC811 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCB82CEF80F600EEC811 /* LogoView.swift */; };
 		7F15CCBB2CEF832C00EEC811 /* TextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCBA2CEF832C00EEC811 /* TextContainer.swift */; };
+		7F15CCC22CEF85F000EEC811 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCC12CEF85F000EEC811 /* TabBarCoordinator.swift */; };
+		7F15CCC42CEF860400EEC811 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCC32CEF860400EEC811 /* TabBarController.swift */; };
+		7F15CCD02CEF869200EEC811 /* UsersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCCF2CEF869200EEC811 /* UsersCoordinator.swift */; };
+		7F15CCD22CEF86D400EEC811 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCD12CEF86D400EEC811 /* UsersViewController.swift */; };
+		7F15CCD42CEF86F400EEC811 /* UsersContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCD32CEF86F400EEC811 /* UsersContentView.swift */; };
+		7F15CCD62CEF871400EEC811 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCD52CEF871400EEC811 /* UsersViewModel.swift */; };
+		7F15CCD82CEF874900EEC811 /* SingUpCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCD72CEF874900EEC811 /* SingUpCoordinator.swift */; };
+		7F15CCDA2CEF875500EEC811 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCD92CEF875500EEC811 /* SingUpViewController.swift */; };
+		7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCDB2CEF875C00EEC811 /* SingUpContentView.swift */; };
+		7F15CCDE2CEF876300EEC811 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCDD2CEF876300EEC811 /* SingUpViewModel.swift */; };
+		7F15CCE02CEF88B900EEC811 /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCDF2CEF88B900EEC811 /* BaseTabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +51,17 @@
 		7F15CCB62CEF7E9A00EEC811 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		7F15CCB82CEF80F600EEC811 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		7F15CCBA2CEF832C00EEC811 /* TextContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextContainer.swift; sourceTree = "<group>"; };
+		7F15CCC12CEF85F000EEC811 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		7F15CCC32CEF860400EEC811 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7F15CCCF2CEF869200EEC811 /* UsersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCoordinator.swift; sourceTree = "<group>"; };
+		7F15CCD12CEF86D400EEC811 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
+		7F15CCD32CEF86F400EEC811 /* UsersContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersContentView.swift; sourceTree = "<group>"; };
+		7F15CCD52CEF871400EEC811 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		7F15CCD72CEF874900EEC811 /* SingUpCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpCoordinator.swift; sourceTree = "<group>"; };
+		7F15CCD92CEF875500EEC811 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
+		7F15CCDB2CEF875C00EEC811 /* SingUpContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpContentView.swift; sourceTree = "<group>"; };
+		7F15CCDD2CEF876300EEC811 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
+		7F15CCDF2CEF88B900EEC811 /* BaseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +146,9 @@
 		7F15CC9E2CEF7C2100EEC811 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7F15CCC62CEF863200EEC811 /* SingUpModule */,
+				7F15CCC52CEF862700EEC811 /* UsersModule */,
+				7F15CCBD2CEF85C100EEC811 /* TabBarModule */,
 				7F15CCAB2CEF7CA400EEC811 /* LaunchModule */,
 			);
 			path = Modules;
@@ -133,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				7F15CCB42CEF7E2B00EEC811 /* BaseInitView.swift */,
+				7F15CCDF2CEF88B900EEC811 /* BaseTabViewController.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -219,6 +245,117 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		7F15CCBD2CEF85C100EEC811 /* TabBarModule */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCBF2CEF85DB00EEC811 /* ViewController */,
+				7F15CCBE2CEF85D100EEC811 /* Coordinator */,
+			);
+			path = TabBarModule;
+			sourceTree = "<group>";
+		};
+		7F15CCBE2CEF85D100EEC811 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCC12CEF85F000EEC811 /* TabBarCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7F15CCBF2CEF85DB00EEC811 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCC32CEF860400EEC811 /* TabBarController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7F15CCC52CEF862700EEC811 /* UsersModule */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCCB2CEF866400EEC811 /* ViewModel */,
+				7F15CCCA2CEF865E00EEC811 /* Views */,
+				7F15CCC92CEF865600EEC811 /* ViewController */,
+				7F15CCC72CEF864500EEC811 /* Coordinator */,
+			);
+			path = UsersModule;
+			sourceTree = "<group>";
+		};
+		7F15CCC62CEF863200EEC811 /* SingUpModule */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCCE2CEF867400EEC811 /* ViewModel */,
+				7F15CCCD2CEF866F00EEC811 /* Views */,
+				7F15CCCC2CEF866900EEC811 /* ViewController */,
+				7F15CCC82CEF864D00EEC811 /* Coordinator */,
+			);
+			path = SingUpModule;
+			sourceTree = "<group>";
+		};
+		7F15CCC72CEF864500EEC811 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCCF2CEF869200EEC811 /* UsersCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7F15CCC82CEF864D00EEC811 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCD72CEF874900EEC811 /* SingUpCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		7F15CCC92CEF865600EEC811 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCD12CEF86D400EEC811 /* UsersViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7F15CCCA2CEF865E00EEC811 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCD32CEF86F400EEC811 /* UsersContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7F15CCCB2CEF866400EEC811 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCD52CEF871400EEC811 /* UsersViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7F15CCCC2CEF866900EEC811 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCD92CEF875500EEC811 /* SingUpViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7F15CCCD2CEF866F00EEC811 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCDB2CEF875C00EEC811 /* SingUpContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7F15CCCE2CEF867400EEC811 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7F15CCDD2CEF876300EEC811 /* SingUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,16 +428,27 @@
 			files = (
 				7F15CCAA2CEF7C8200EEC811 /* AppCoordinator.swift in Sources */,
 				7F15CCA82CEF7C7700EEC811 /* BaseCoordinator.swift in Sources */,
+				7F15CCDE2CEF876300EEC811 /* SingUpViewModel.swift in Sources */,
+				7F15CCDA2CEF875500EEC811 /* SingUpViewController.swift in Sources */,
+				7F15CCD82CEF874900EEC811 /* SingUpCoordinator.swift in Sources */,
 				7F15CCB92CEF80F600EEC811 /* LogoView.swift in Sources */,
+				7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */,
 				7F15CCB12CEF7CE600EEC811 /* LaunchCoordinator.swift in Sources */,
 				7F15CCB72CEF7E9A00EEC811 /* LaunchViewModel.swift in Sources */,
+				7F15CCD22CEF86D400EEC811 /* UsersViewController.swift in Sources */,
 				7F15CCB32CEF7E0B00EEC811 /* LaunchContentView.swift in Sources */,
+				7F15CCD62CEF871400EEC811 /* UsersViewModel.swift in Sources */,
+				7F15CCC22CEF85F000EEC811 /* TabBarCoordinator.swift in Sources */,
+				7F15CCD02CEF869200EEC811 /* UsersCoordinator.swift in Sources */,
 				7F15CCBB2CEF832C00EEC811 /* TextContainer.swift in Sources */,
 				7F15CCA62CEF7C6B00EEC811 /* Coordinator.swift in Sources */,
+				7F15CCE02CEF88B900EEC811 /* BaseTabViewController.swift in Sources */,
 				7F15CCB52CEF7E2B00EEC811 /* BaseInitView.swift in Sources */,
 				7F0606E12CEF59B500790531 /* LaunchViewController.swift in Sources */,
+				7F15CCC42CEF860400EEC811 /* TabBarController.swift in Sources */,
 				7F0606DD2CEF59B500790531 /* AppDelegate.swift in Sources */,
 				7F0606DF2CEF59B500790531 /* SceneDelegate.swift in Sources */,
+				7F15CCD42CEF86F400EEC811 /* UsersContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

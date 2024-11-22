@@ -28,6 +28,7 @@ private extension LogoView {
         appTitleLabel.text = TextContainer.LaunchScreen.appTitle
         appTitleLabel.font = .systemFont(ofSize: 28)
         appTitleLabel.textAlignment = .center
+        appTitleLabel.textColor = .black
     }
 }
 //MARK: - setupConstraints

@@ -18,9 +18,3 @@ final class LaunchViewController: UIViewController {
         viewModel.startTimer()
     }
 }
-
-@available(iOS 17, *)
-#Preview {
-    let view = LaunchViewController()
-    return view
-}
