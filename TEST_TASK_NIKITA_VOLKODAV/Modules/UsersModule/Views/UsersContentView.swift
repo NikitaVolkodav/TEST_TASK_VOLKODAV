@@ -4,6 +4,7 @@ final class UsersContentView: BaseInitView {
     
     private let navigationView = NavigationView()
     private let infoView = InfoView()
+    private let tableView = UITableView()
     
     override func setView() {
         backgroundColor = .white
@@ -11,6 +12,7 @@ final class UsersContentView: BaseInitView {
     
     override func addSubviews() {
         addSubview(navigationView)
+        addSubview(tableView)
         addSubview(infoView)
     }
     
@@ -37,12 +39,23 @@ final class UsersContentView: BaseInitView {
             break
         }
     }
+    
+    func reloadTableView() {
+        tableView.reloadData()
+    }
+    
+    func setTableView(dataSource: UITableViewDataSource,
+                      delegate: UITableViewDelegate) {
+        tableView.dataSource = dataSource
+        tableView.delegate = delegate
+    }
 }
 //MARK: - setupConfiguration
 private extension UsersContentView {
     func setupViewsConfiguration() {
         configNavigationView()
         configInfoView()
+        configTableView()
     }
     
     func configNavigationView() {
@@ -52,11 +65,19 @@ private extension UsersContentView {
     func configInfoView() {
         infoView.isHidden = true
     }
+    
+    func configTableView() {
+        tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.reuseIdentifier)
+        tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
+        
+    }
 }
 //MARK: - setupConstraints
 private extension UsersContentView {
     func setupViewsConstraints() {
         setupNavigationViewConstraints()
+        setupTableViewConstraints()
         setupInfoViewConstraints()
     }
     
@@ -67,6 +88,16 @@ private extension UsersContentView {
             navigationView.leadingAnchor.constraint(equalTo: leadingAnchor),
             navigationView.trailingAnchor.constraint(equalTo: trailingAnchor),
             navigationView.heightAnchor.constraint(equalToConstant: 56)
+        ])
+    }
+    
+    func setupTableViewConstraints() {
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: navigationView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
     

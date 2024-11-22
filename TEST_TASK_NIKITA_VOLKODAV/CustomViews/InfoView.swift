@@ -29,7 +29,7 @@ final class InfoView: BaseInitView {
         switch status {
         case .empty:
             imageView.image = .empty
-            titleLabel.text = TextContainer.Info.emailTitle
+            titleLabel.text = TextContainer.Info.emptyTitle
             actionButton.isHidden = true
         case .internet:
             imageView.image = .internet
