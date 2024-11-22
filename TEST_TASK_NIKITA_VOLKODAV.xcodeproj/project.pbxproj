@@ -32,6 +32,12 @@
 		7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCDB2CEF875C00EEC811 /* SingUpContentView.swift */; };
 		7F15CCDE2CEF876300EEC811 /* SingUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCDD2CEF876300EEC811 /* SingUpViewModel.swift */; };
 		7F15CCE02CEF88B900EEC811 /* BaseTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCDF2CEF88B900EEC811 /* BaseTabViewController.swift */; };
+		7F15CCE22CF0B87000EEC811 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCE12CF0B87000EEC811 /* NavigationView.swift */; };
+		7F15CCE52CF0BCC700EEC811 /* NunitoSans_7pt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F15CCE32CF0BCC700EEC811 /* NunitoSans_7pt-Regular.ttf */; };
+		7F15CCE62CF0BCC700EEC811 /* NunitoSans_7pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F15CCE42CF0BCC700EEC811 /* NunitoSans_7pt-SemiBold.ttf */; };
+		7F15CCE82CF0BD0A00EEC811 /* FontContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCE72CF0BD0A00EEC811 /* FontContainer.swift */; };
+		7F15CCEA2CF0BDE000EEC811 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCE92CF0BDE000EEC811 /* Enums.swift */; };
+		7F15CCEC2CF0C2AB00EEC811 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCEB2CF0C2AB00EEC811 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +68,12 @@
 		7F15CCDB2CEF875C00EEC811 /* SingUpContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpContentView.swift; sourceTree = "<group>"; };
 		7F15CCDD2CEF876300EEC811 /* SingUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewModel.swift; sourceTree = "<group>"; };
 		7F15CCDF2CEF88B900EEC811 /* BaseTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabViewController.swift; sourceTree = "<group>"; };
+		7F15CCE12CF0B87000EEC811 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		7F15CCE32CF0BCC700EEC811 /* NunitoSans_7pt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans_7pt-Regular.ttf"; sourceTree = "<group>"; };
+		7F15CCE42CF0BCC700EEC811 /* NunitoSans_7pt-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NunitoSans_7pt-SemiBold.ttf"; sourceTree = "<group>"; };
+		7F15CCE72CF0BD0A00EEC811 /* FontContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontContainer.swift; sourceTree = "<group>"; };
+		7F15CCE92CF0BDE000EEC811 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		7F15CCEB2CF0C2AB00EEC811 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,8 @@
 		7F15CC9A2CEF7BEA00EEC811 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				7F15CCE32CF0BCC700EEC811 /* NunitoSans_7pt-Regular.ttf */,
+				7F15CCE42CF0BCC700EEC811 /* NunitoSans_7pt-SemiBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -120,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				7F15CCBA2CEF832C00EEC811 /* TextContainer.swift */,
+				7F15CCE72CF0BD0A00EEC811 /* FontContainer.swift */,
+				7F15CCE92CF0BDE000EEC811 /* Enums.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -159,6 +175,8 @@
 			children = (
 				7F15CCB42CEF7E2B00EEC811 /* BaseInitView.swift */,
 				7F15CCDF2CEF88B900EEC811 /* BaseTabViewController.swift */,
+				7F15CCE12CF0B87000EEC811 /* NavigationView.swift */,
+				7F15CCEB2CF0C2AB00EEC811 /* InfoView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -415,7 +433,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F0606E62CEF59B600790531 /* Assets.xcassets in Resources */,
+				7F15CCE52CF0BCC700EEC811 /* NunitoSans_7pt-Regular.ttf in Resources */,
 				7F0606E92CEF59B600790531 /* Base in Resources */,
+				7F15CCE62CF0BCC700EEC811 /* NunitoSans_7pt-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,10 +453,13 @@
 				7F15CCD82CEF874900EEC811 /* SingUpCoordinator.swift in Sources */,
 				7F15CCB92CEF80F600EEC811 /* LogoView.swift in Sources */,
 				7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */,
+				7F15CCEC2CF0C2AB00EEC811 /* InfoView.swift in Sources */,
 				7F15CCB12CEF7CE600EEC811 /* LaunchCoordinator.swift in Sources */,
 				7F15CCB72CEF7E9A00EEC811 /* LaunchViewModel.swift in Sources */,
 				7F15CCD22CEF86D400EEC811 /* UsersViewController.swift in Sources */,
+				7F15CCE22CF0B87000EEC811 /* NavigationView.swift in Sources */,
 				7F15CCB32CEF7E0B00EEC811 /* LaunchContentView.swift in Sources */,
+				7F15CCE82CF0BD0A00EEC811 /* FontContainer.swift in Sources */,
 				7F15CCD62CEF871400EEC811 /* UsersViewModel.swift in Sources */,
 				7F15CCC22CEF85F000EEC811 /* TabBarCoordinator.swift in Sources */,
 				7F15CCD02CEF869200EEC811 /* UsersCoordinator.swift in Sources */,
@@ -444,6 +467,7 @@
 				7F15CCA62CEF7C6B00EEC811 /* Coordinator.swift in Sources */,
 				7F15CCE02CEF88B900EEC811 /* BaseTabViewController.swift in Sources */,
 				7F15CCB52CEF7E2B00EEC811 /* BaseInitView.swift in Sources */,
+				7F15CCEA2CF0BDE000EEC811 /* Enums.swift in Sources */,
 				7F0606E12CEF59B500790531 /* LaunchViewController.swift in Sources */,
 				7F15CCC42CEF860400EEC811 /* TabBarController.swift in Sources */,
 				7F0606DD2CEF59B500790531 /* AppDelegate.swift in Sources */,

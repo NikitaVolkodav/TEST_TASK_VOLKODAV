@@ -7,6 +7,7 @@ final class UsersCoordinator: BaseCoordinator {
         usersViewController.viewModel.coordinator = self
         usersViewController.configureTabBarItem(title: TextContainer.TabBar.users,
                                                 defaultImage: .users)
+        navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(usersViewController,
                                                 animated: true)
     }

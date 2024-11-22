@@ -7,6 +7,7 @@ final class SingUpCoordinator: BaseCoordinator {
         singUpViewController.viewModel.coordinator = self
         singUpViewController.configureTabBarItem(title: TextContainer.TabBar.signUp,
                                                  defaultImage: .singUp)
+        navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(singUpViewController,
                                                 animated: true)
     }

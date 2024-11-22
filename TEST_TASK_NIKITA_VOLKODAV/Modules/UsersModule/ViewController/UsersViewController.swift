@@ -11,6 +11,11 @@ final class UsersViewController: BaseTabViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configInfoView()
+    }
+    
+    func configInfoView() {
+        contentView.setInfoView(by: .email)
     }
 }
 
