@@ -41,6 +41,7 @@
 		7F15CCEE2CF0D62200EEC811 /* UsersViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCED2CF0D62200EEC811 /* UsersViewController+TableView.swift */; };
 		7F15CCF02CF0D6A700EEC811 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCEF2CF0D6A700EEC811 /* UserCell.swift */; };
 		7F15CCF22CF0D6D600EEC811 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCF12CF0D6D600EEC811 /* BaseTableViewCell.swift */; };
+		7F15CCF42CF0E71600EEC811 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		7F15CCED2CF0D62200EEC811 /* UsersViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UsersViewController+TableView.swift"; sourceTree = "<group>"; };
 		7F15CCEF2CF0D6A700EEC811 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		7F15CCF12CF0D6D600EEC811 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				7F15CCDF2CEF88B900EEC811 /* BaseTabViewController.swift */,
 				7F15CCE12CF0B87000EEC811 /* NavigationView.swift */,
 				7F15CCEB2CF0C2AB00EEC811 /* InfoView.swift */,
+				7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */,
 				7F15CCEC2CF0C2AB00EEC811 /* InfoView.swift in Sources */,
 				7F15CCB12CEF7CE600EEC811 /* LaunchCoordinator.swift in Sources */,
+				7F15CCF42CF0E71600EEC811 /* CustomTextFieldView.swift in Sources */,
 				7F15CCEE2CF0D62200EEC811 /* UsersViewController+TableView.swift in Sources */,
 				7F15CCB72CEF7E9A00EEC811 /* LaunchViewModel.swift in Sources */,
 				7F15CCD22CEF86D400EEC811 /* UsersViewController.swift in Sources */,

@@ -24,9 +24,3 @@ final class UsersViewController: BaseTabViewController {
         contentView.setInfoView(by: .registered)
     }
 }
-
-@available(iOS 17, *)
-#Preview {
-    let view = UsersViewController()
-    return view
-}

@@ -13,3 +13,9 @@ final class SingUpViewController: BaseTabViewController {
         super.viewDidLoad()
     }
 }
+
+@available(iOS 17, *)
+#Preview {
+    let view = SingUpViewController()
+    return view
+}
