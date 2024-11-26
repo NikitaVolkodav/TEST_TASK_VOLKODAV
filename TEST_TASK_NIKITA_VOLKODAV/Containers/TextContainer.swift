@@ -19,6 +19,13 @@ enum TextContainer {
     // MARK: - Users
     enum SingUpScreen {
         static let navTitle = "Working with POST request"
+        
+        static let selectPosition = "Select your position"
+        
+        static let front = "Frontend developer"
+        static let back = "Backend developer"
+        static let designer = "Designer"
+        static let qa = "QA"
     }
     
     enum Info {

@@ -42,6 +42,8 @@
 		7F15CCF02CF0D6A700EEC811 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCEF2CF0D6A700EEC811 /* UserCell.swift */; };
 		7F15CCF22CF0D6D600EEC811 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCF12CF0D6D600EEC811 /* BaseTableViewCell.swift */; };
 		7F15CCF42CF0E71600EEC811 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */; };
+		FD6796052CF5E83B00A7B58B /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6796042CF5E83B00A7B58B /* PositionView.swift */; };
+		FD6796072CF603AA00A7B58B /* AlertContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6796062CF603AA00A7B58B /* AlertContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		7F15CCEF2CF0D6A700EEC811 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		7F15CCF12CF0D6D600EEC811 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		FD6796042CF5E83B00A7B58B /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
+		FD6796062CF603AA00A7B58B /* AlertContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				7F15CCBA2CEF832C00EEC811 /* TextContainer.swift */,
 				7F15CCE72CF0BD0A00EEC811 /* FontContainer.swift */,
 				7F15CCE92CF0BDE000EEC811 /* Enums.swift */,
+				FD6796062CF603AA00A7B58B /* AlertContainer.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				7F15CCE12CF0B87000EEC811 /* NavigationView.swift */,
 				7F15CCEB2CF0C2AB00EEC811 /* InfoView.swift */,
 				7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */,
+				FD6796042CF5E83B00A7B58B /* PositionView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 				7F15CCF42CF0E71600EEC811 /* CustomTextFieldView.swift in Sources */,
 				7F15CCEE2CF0D62200EEC811 /* UsersViewController+TableView.swift in Sources */,
 				7F15CCB72CEF7E9A00EEC811 /* LaunchViewModel.swift in Sources */,
+				FD6796072CF603AA00A7B58B /* AlertContainer.swift in Sources */,
 				7F15CCD22CEF86D400EEC811 /* UsersViewController.swift in Sources */,
 				7F15CCE22CF0B87000EEC811 /* NavigationView.swift in Sources */,
 				7F15CCB32CEF7E0B00EEC811 /* LaunchContentView.swift in Sources */,
@@ -487,6 +494,7 @@
 				7F15CCC42CEF860400EEC811 /* TabBarController.swift in Sources */,
 				7F0606DD2CEF59B500790531 /* AppDelegate.swift in Sources */,
 				7F0606DF2CEF59B500790531 /* SceneDelegate.swift in Sources */,
+				FD6796052CF5E83B00A7B58B /* PositionView.swift in Sources */,
 				7F15CCF22CF0D6D600EEC811 /* BaseTableViewCell.swift in Sources */,
 				7F15CCD42CEF86F400EEC811 /* UsersContentView.swift in Sources */,
 			);

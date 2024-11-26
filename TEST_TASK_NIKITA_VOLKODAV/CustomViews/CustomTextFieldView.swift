@@ -4,14 +4,14 @@ final class CustomTextFieldView: BaseInitView {
     
     private let textField = UITextField()
     private let infoLabel = UILabel()
+    private let uploadButton = UIButton()
     
-    override func setView() {
-//        backgroundColor = .red
-    }
+    var uploadAction: (() -> Void)?
     
     override func addSubviews() {
         addSubview(textField)
         addSubview(infoLabel)
+        addSubview(uploadButton)
     }
     
     override func setupConfiguration() {
@@ -23,7 +23,9 @@ final class CustomTextFieldView: BaseInitView {
     }
     
     //MARK: - OpenActions
-    func setupTextField(placeholder: String, infoText: String = "") {
+    func setupTextField(placeholder: String,
+                        infoText: String = "",
+                        isHiddenUpload: Bool = true) {
         textField.placeholder = placeholder
         
         let attributes: [NSAttributedString.Key: Any] = [
@@ -33,6 +35,7 @@ final class CustomTextFieldView: BaseInitView {
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
         
         infoLabel.text = infoText
+        uploadButton.isHidden = isHiddenUpload
     }
 }
 //MARK: - setupConfiguration
@@ -40,6 +43,7 @@ private extension CustomTextFieldView {
     func setupViewsConfiguration() {
         configTextField()
         configInfoLabel()
+        configUploadButton()
     }
     
     func configTextField() {
@@ -51,7 +55,6 @@ private extension CustomTextFieldView {
         textField.layer.cornerRadius = 4
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.lightGray.cgColor
-
     }
     
     func configInfoLabel() {
@@ -59,12 +62,23 @@ private extension CustomTextFieldView {
         infoLabel.font = .regular14
         infoLabel.textColor = .gray
     }
+    
+    func configUploadButton() {
+        uploadButton.setTitle("Upload", for: .normal)
+        uploadButton.setTitleColor(.customBlue, for: .normal)
+        uploadButton.titleLabel?.font = .regular18
+        let action = UIAction { [weak self] _ in
+            self?.uploadAction?()
+        }
+        uploadButton.addAction(action, for: .touchUpInside)
+    }
 }
 //MARK: - setupConstraints
 private extension CustomTextFieldView {
     func setupViewsConstraints() {
         setupTextFieldConstraints()
         setupInfoLabelConstraints()
+        setupUploadButtonConstraints()
     }
     
     func setupTextFieldConstraints() {
@@ -82,6 +96,19 @@ private extension CustomTextFieldView {
         NSLayoutConstraint.activate([
             infoLabel.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 4),
             infoLabel.leadingAnchor.constraint(equalTo: textField.leadingAnchor, constant: 16)
+        ])
+    }
+    
+    func setupUploadButtonConstraints() {
+        uploadButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            uploadButton.topAnchor.constraint(equalTo: textField.topAnchor,
+                                              constant: 8),
+            uploadButton.trailingAnchor.constraint(equalTo: textField.trailingAnchor,
+                                                   constant: -8),
+            uploadButton.bottomAnchor.constraint(equalTo: textField.bottomAnchor,
+                                                 constant: -8),
+            uploadButton.widthAnchor.constraint(equalToConstant: 86)
         ])
     }
 }

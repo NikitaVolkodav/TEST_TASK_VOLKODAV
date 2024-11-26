@@ -11,3 +11,10 @@ enum InfoViewStatus {
     case registered
     case email
 }
+
+enum PositionType {
+    case frontend
+    case backend
+    case designer
+    case qa
+}
