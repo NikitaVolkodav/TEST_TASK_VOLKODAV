@@ -114,6 +114,10 @@
 		7F0606DB2CEF59B500790531 /* TEST_TASK_NIKITA_VOLKODAV */ = {
 			isa = PBXGroup;
 			children = (
+				FD6796012CF5D86D00A7B58B /* Helpers */,
+				FD6796002CF5D86400A7B58B /* Models */,
+				FD6795FF2CF5D85C00A7B58B /* Network */,
+				FD6795FE2CF5D85200A7B58B /* Services */,
 				7F15CCA02CEF7C3400EEC811 /* Coordinator */,
 				7F15CC9F2CEF7C2B00EEC811 /* CustomViews */,
 				7F15CC9E2CEF7C2100EEC811 /* Modules */,
@@ -352,6 +356,34 @@
 				7F15CCDD2CEF876300EEC811 /* SingUpViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FD6795FE2CF5D85200A7B58B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FD6795FF2CF5D85C00A7B58B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FD6796002CF5D86400A7B58B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FD6796012CF5D86D00A7B58B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
