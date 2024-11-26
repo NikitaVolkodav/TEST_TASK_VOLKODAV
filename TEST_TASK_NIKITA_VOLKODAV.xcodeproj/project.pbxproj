@@ -114,10 +114,6 @@
 		7F0606DB2CEF59B500790531 /* TEST_TASK_NIKITA_VOLKODAV */ = {
 			isa = PBXGroup;
 			children = (
-				7F15CCA42CEF7C5C00EEC811 /* Helpers */,
-				7F15CCA32CEF7C5300EEC811 /* Models */,
-				7F15CCA22CEF7C4900EEC811 /* Network */,
-				7F15CCA12CEF7C3C00EEC811 /* Services */,
 				7F15CCA02CEF7C3400EEC811 /* Coordinator */,
 				7F15CC9F2CEF7C2B00EEC811 /* CustomViews */,
 				7F15CC9E2CEF7C2100EEC811 /* Modules */,
@@ -199,34 +195,6 @@
 				7F15CCA92CEF7C8200EEC811 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		7F15CCA12CEF7C3C00EEC811 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		7F15CCA22CEF7C4900EEC811 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		7F15CCA32CEF7C5300EEC811 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		7F15CCA42CEF7C5C00EEC811 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7F15CCAB2CEF7CA400EEC811 /* LaunchModule */ = {
