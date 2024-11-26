@@ -20,12 +20,21 @@ enum TextContainer {
     enum SingUpScreen {
         static let navTitle = "Working with POST request"
         
-        static let selectPosition = "Select your position"
         
+        static let name = "Your name"
+        static let email = "Email"
+        static let phone = "Phone"
+        static let phoneMask = "+38 (XXX) XXX - XX - XX"
+        static let photo = "Upload your photo"
+        static let upload = "Upload"
+        
+        static let selectPosition = "Select your position"
         static let front = "Frontend developer"
         static let back = "Backend developer"
         static let designer = "Designer"
         static let qa = "QA"
+        
+        static let signUp = "Sign up"
     }
     
     enum Info {

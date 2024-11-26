@@ -4,7 +4,7 @@ final class SingUpContentView: BaseInitView {
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
-
+    
     private let navigationView = NavigationView()
     private let nameTextField = CustomTextFieldView()
     private let emailTextField = CustomTextFieldView()
@@ -76,10 +76,12 @@ private extension SingUpContentView {
     }
     
     func configTextFields() {
-        nameTextField.setupTextField(placeholder: "Your name")
-        emailTextField.setupTextField(placeholder: "Email")
-        phoneTextField.setupTextField(placeholder: "Phone", infoText: "+38 (XXX) XXX - XX - XX")
-        photoTextField.setupTextField(placeholder: "Upload your photo", isHiddenUpload: false)
+        nameTextField.setupTextField(placeholder: TextContainer.SingUpScreen.name)
+        emailTextField.setupTextField(placeholder: TextContainer.SingUpScreen.email)
+        phoneTextField.setupTextField(placeholder: TextContainer.SingUpScreen.phone,
+                                      infoText: TextContainer.SingUpScreen.phoneMask)
+        photoTextField.setupTextField(placeholder: TextContainer.SingUpScreen.photo,
+                                      isHiddenUpload: false)
     }
     
     func configSelectPositionLabel() {
@@ -97,8 +99,8 @@ private extension SingUpContentView {
             positionStackView.addArrangedSubview(positionView)
         }
     }
-
-     func createPositionView(for position: PositionType, at index: Int) -> PositionView {
+    
+    func createPositionView(for position: PositionType, at index: Int) -> PositionView {
         let positionView = PositionView()
         positionView.heightAnchor.constraint(equalToConstant: 48).isActive = true
         positionView.setPosition(type: position, isSelected: index == selectedIndex)
@@ -108,8 +110,8 @@ private extension SingUpContentView {
         }
         return positionView
     }
-
-     func handlePositionSelection(at index: Int, for positionView: PositionView) {
+    
+    func handlePositionSelection(at index: Int, for positionView: PositionView) {
         if let currentView = positionStackView.arrangedSubviews[selectedIndex] as? PositionView {
             currentView.selectButton(isSelected: false)
         }
@@ -121,7 +123,8 @@ private extension SingUpContentView {
     func configSignUpButton() {
         signUpButton.backgroundColor = .lightGray
         signUpButton.layer.cornerRadius = 24
-        signUpButton.setTitle("Sign up", for: .normal)
+        signUpButton.setTitle(TextContainer.SingUpScreen.signUp,
+                              for: .normal)
         signUpButton.setTitleColor(.darkGray, for: .normal)
         signUpButton.isUserInteractionEnabled = false
     }
@@ -213,7 +216,7 @@ private extension SingUpContentView {
             selectPositionLabel.leadingAnchor.constraint(equalTo: leadingAnchor,
                                                          constant: 16),
             selectPositionLabel.trailingAnchor.constraint(equalTo: trailingAnchor,
-                                                         constant: -16),
+                                                          constant: -16),
         ])
     }
     

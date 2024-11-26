@@ -31,7 +31,7 @@ final class CustomTextFieldView: BaseInitView {
         let attributes: [NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.lightGray
         ]
-
+        
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
         
         infoLabel.text = infoText
@@ -58,13 +58,12 @@ private extension CustomTextFieldView {
     }
     
     func configInfoLabel() {
-        infoLabel.text = "+38 (XXX) XXX - XX - XX"
         infoLabel.font = .regular14
         infoLabel.textColor = .gray
     }
     
     func configUploadButton() {
-        uploadButton.setTitle("Upload", for: .normal)
+        uploadButton.setTitle(TextContainer.SingUpScreen.upload, for: .normal)
         uploadButton.setTitleColor(.customBlue, for: .normal)
         uploadButton.titleLabel?.font = .regular18
         let action = UIAction { [weak self] _ in
