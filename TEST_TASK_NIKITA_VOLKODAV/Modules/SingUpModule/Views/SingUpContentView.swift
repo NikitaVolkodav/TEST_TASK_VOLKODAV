@@ -7,6 +7,7 @@ final class SingUpContentView: BaseInitView {
     private let emailTextField = CustomTextFieldView()
     private let phoneTextField = CustomTextFieldView()
     private let selectPositionLabel = UILabel()
+    private let newTESTLabel = UILabel()
     
     override func setView() {
         backgroundColor = .white
