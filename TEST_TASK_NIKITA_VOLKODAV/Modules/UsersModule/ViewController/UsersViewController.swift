@@ -11,8 +11,19 @@ final class UsersViewController: BaseTabViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startLoading()
         setupTableView()
         configInfoView()
+    }
+    
+    private func startLoading() {
+        viewModel.loadUsers()
+        viewModel.$isLoading.bind { [weak self] isLoading in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                self.contentView.reloadTableView()
+            }
+        }
     }
     
     private func setupTableView() {
@@ -23,4 +34,10 @@ final class UsersViewController: BaseTabViewController {
     private func configInfoView() {
         contentView.setInfoView(by: .registered)
     }
+}
+
+@available(iOS 17, *)
+#Preview {
+    let view = UsersViewController()
+    return view
 }

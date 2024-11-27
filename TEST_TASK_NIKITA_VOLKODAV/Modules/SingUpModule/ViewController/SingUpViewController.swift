@@ -27,9 +27,3 @@ private extension SingUpViewController {
         }
     }
 }
-
-@available(iOS 17, *)
-#Preview {
-    let view = SingUpViewController()
-    return view
-}

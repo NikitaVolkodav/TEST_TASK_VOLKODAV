@@ -3,7 +3,7 @@ import UIKit
 final class UserCell: BaseTableViewCell {
     static let reuseIdentifier = "UserCell"
     
-    private let userImageView = UIImageView()
+    private let userImageView = KingfisherImageView()
     private let stackView = UIStackView()
     private let nameLabel = UILabel()
     private let positionLabel = UILabel()
@@ -34,12 +34,12 @@ final class UserCell: BaseTableViewCell {
         setupCellsConstraints()
     }
     //MARK: - OpenActions
-    func setUserCell(userImage: UIImage?,
+    func setUserCell(userImage: String?,
                      name: String?,
                      position: String,
                      email: String,
                      phone: String) {
-        userImageView.image = userImage
+        userImageView.loadImage(from: userImage, defaultImage: .defaultUser)
         nameLabel.text = name
         positionLabel.text = position
         emailLabel.text = email
@@ -59,7 +59,6 @@ private extension UserCell {
     }
     
     func configUserImageView() {
-        userImageView.image = .mokUser
         userImageView.contentMode = .scaleAspectFill
         userImageView.layer.cornerRadius = 25
         userImageView.layer.masksToBounds = true
