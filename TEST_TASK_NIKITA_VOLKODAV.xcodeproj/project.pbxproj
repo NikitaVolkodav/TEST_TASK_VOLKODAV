@@ -54,6 +54,7 @@
 		FD6796192CF741E700A7B58B /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6796182CF741E700A7B58B /* APIEndpoint.swift */; };
 		FD67961B2CF7429900A7B58B /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67961A2CF7429900A7B58B /* ObservableValue.swift */; };
 		FD67961D2CF747F000A7B58B /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67961C2CF747F000A7B58B /* UserDetails.swift */; };
+		FD67961F2CF7516B00A7B58B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67961E2CF7516B00A7B58B /* LoadingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		FD6796182CF741E700A7B58B /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		FD67961A2CF7429900A7B58B /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
 		FD67961C2CF747F000A7B58B /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		FD67961E2CF7516B00A7B58B /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				7F15CCEF2CF0D6A700EEC811 /* UserCell.swift */,
+				FD67961E2CF7516B00A7B58B /* LoadingCell.swift */,
 				7F15CCD32CEF86F400EEC811 /* UsersContentView.swift */,
 			);
 			path = Views;
@@ -514,6 +517,7 @@
 				FD6796072CF603AA00A7B58B /* AlertContainer.swift in Sources */,
 				FD6796192CF741E700A7B58B /* APIEndpoint.swift in Sources */,
 				7F15CCD22CEF86D400EEC811 /* UsersViewController.swift in Sources */,
+				FD67961F2CF7516B00A7B58B /* LoadingCell.swift in Sources */,
 				7F15CCE22CF0B87000EEC811 /* NavigationView.swift in Sources */,
 				7F15CCB32CEF7E0B00EEC811 /* LaunchContentView.swift in Sources */,
 				7F15CCE82CF0BD0A00EEC811 /* FontContainer.swift in Sources */,

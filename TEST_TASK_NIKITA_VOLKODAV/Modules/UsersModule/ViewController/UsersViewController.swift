@@ -12,11 +12,11 @@ final class UsersViewController: BaseTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startLoading()
+        setupInternetAction()
         setupTableView()
-        configInfoView()
     }
     
-    private func startLoading() {
+    func startLoading() {
         viewModel.loadUsers()
         viewModel.$isLoading.bind { [weak self] isLoading in
             guard let self else { return }
@@ -24,15 +24,37 @@ final class UsersViewController: BaseTabViewController {
                 self.contentView.reloadTableView()
             }
         }
+        
+        viewModel.$hasConnectError.bind { [weak self] hasError in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                if hasError {
+                    self.contentView.setInfoView(by: .internet)
+                }
+            }
+        }
+        
+        viewModel.$hasError.bind { [weak self] hasError in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                if hasError {
+                    self.contentView.setInfoView(by: .empty)
+                }
+            }
+        }
+    }
+    
+    private func setupInternetAction() {
+        contentView.setInternetAction { [weak self] in
+            guard let self = self else { return }
+            contentView.setDefaultUI()
+            startLoading()
+        }
     }
     
     private func setupTableView() {
         contentView.setTableView(dataSource: self,
                                  delegate: self)
-    }
-    
-    private func configInfoView() {
-        contentView.setInfoView(by: .registered)
     }
 }
 

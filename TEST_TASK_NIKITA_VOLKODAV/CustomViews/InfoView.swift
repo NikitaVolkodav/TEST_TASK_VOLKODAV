@@ -6,9 +6,11 @@ final class InfoView: BaseInitView {
     private let titleLabel = UILabel()
     private let actionButton = UIButton()
     
-    var internetAction: (() -> Void)?
-    var registeredAction: (() -> Void)?
-    var emailAction: (() -> Void)?
+    var buttonAction: (() -> Void)?
+    
+    override func setView() {
+        backgroundColor = .white
+    }
     
     override func addSubviews() {
         addSubview(imageView)
@@ -32,19 +34,21 @@ final class InfoView: BaseInitView {
             titleLabel.text = TextContainer.Info.emptyTitle
             actionButton.isHidden = true
         case .internet:
+            actionButton.isHidden = false
             imageView.image = .internet
             titleLabel.text = TextContainer.Info.internetTitle
             actionButton.setTitle(TextContainer.Info.tryAgain, for: .normal)
         case .registered:
+            actionButton.isHidden = false
             imageView.image = .registered
             titleLabel.text = TextContainer.Info.registeredTitle
             actionButton.setTitle(TextContainer.Info.gotIt, for: .normal)
         case .email:
+            actionButton.isHidden = false
             imageView.image = .email
             titleLabel.text = TextContainer.Info.emailTitle
             actionButton.setTitle(TextContainer.Info.tryAgain, for: .normal)
         }
-        updateAction(for: status)
     }
 }
 //MARK: - setupConfiguration
@@ -70,29 +74,14 @@ private extension InfoView {
         actionButton.layer.cornerRadius = 24
         actionButton.setTitleColor(.black, for: .normal)
         actionButton.titleLabel?.font = .semibold18
+        updateAction()
     }
     
-    func updateAction(for actionType: InfoViewStatus) {
+    private func updateAction() {
         actionButton.removeTarget(nil, action: nil, for: .allEvents)
-        
-        let action: UIAction
-        switch actionType {
-        case .internet:
-            action = UIAction { [weak self] _ in
-                self?.internetAction?()
-            }
-        case .registered:
-            action = UIAction { [weak self] _ in
-                self?.registeredAction?()
-            }
-        case .email:
-            action = UIAction { [weak self] _ in
-                self?.emailAction?()
-            }
-        case .empty:
-            action = UIAction { _ in }
+        let action = UIAction { [weak self] _ in
+            self?.buttonAction?()
         }
-        
         actionButton.addAction(action, for: .touchUpInside)
     }
 }
@@ -118,7 +107,9 @@ private extension InfoView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 24)
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 24),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     

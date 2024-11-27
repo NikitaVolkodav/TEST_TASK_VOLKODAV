@@ -29,8 +29,10 @@ final class UsersContentView: BaseInitView {
         infoView.setInfoView(by: status)
         switch status {
         case .empty:
+            tableView.isHidden = true
             infoView.isHidden = false
         case .internet:
+            tableView.isHidden = true
             navigationView.isHidden = true
             infoView.isHidden = false
         case .registered:
@@ -38,6 +40,16 @@ final class UsersContentView: BaseInitView {
         case .email:
             break
         }
+    }
+    
+    func setDefaultUI() {
+        tableView.isHidden = false
+        navigationView.isHidden = false
+        infoView.isHidden = true
+    }
+    
+    func setInternetAction(action: (() -> Void)?) {
+        infoView.buttonAction = action
     }
     
     func reloadTableView() {
@@ -68,6 +80,7 @@ private extension UsersContentView {
     
     func configTableView() {
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.reuseIdentifier)
+        tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.reuseIdentifier)
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
         
@@ -106,6 +119,9 @@ private extension UsersContentView {
         NSLayoutConstraint.activate([
             infoView.centerXAnchor.constraint(equalTo: centerXAnchor),
             infoView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            infoView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            infoView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            infoView.heightAnchor.constraint(equalToConstant: 320)
         ])
     }
 }

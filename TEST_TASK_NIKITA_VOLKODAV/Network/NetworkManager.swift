@@ -12,7 +12,6 @@ protocol NetworkPostable {
 }
 
 final class NetworkManager {
-    //https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=5
     
     private let reachabilityManager = NetworkReachabilityManager()
     
