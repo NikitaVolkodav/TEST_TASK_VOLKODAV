@@ -11,10 +11,8 @@ final class SingUpContentView: BaseInitView {
     private let phoneTextField = CustomTextFieldView()
     private let photoTextField = CustomTextFieldView()
     private let selectPositionLabel = UILabel()
-    private let positionStackView = UIStackView()
+    private let positionTableView = UITableView()
     private let signUpButton = UIButton()
-    private var selectedIndex: Int = 0
-    private let positions: [PositionType] = [.frontend, .backend, .designer, .qa]
     
     override func setView() {
         backgroundColor = .white
@@ -28,7 +26,7 @@ final class SingUpContentView: BaseInitView {
         contentView.addSubview(emailTextField)
         contentView.addSubview(phoneTextField)
         contentView.addSubview(selectPositionLabel)
-        contentView.addSubview(positionStackView)
+        contentView.addSubview(positionTableView)
         contentView.addSubview(photoTextField)
         contentView.addSubview(signUpButton)
     }
@@ -42,10 +40,6 @@ final class SingUpContentView: BaseInitView {
     }
     
     //MARK: - OpenActions
-    func getSelectedIndex() -> Int {
-        return selectedIndex
-    }
-    
     func setUploadAction(_ action: (() -> Void)?) {
         photoTextField.uploadAction = action
     }
@@ -60,6 +54,22 @@ final class SingUpContentView: BaseInitView {
             signUpButton.setTitleColor(.darkGray, for: .normal)
         }
     }
+    
+    func reloadTableView() {
+        positionTableView.reloadData()
+    }
+    
+    func setTableView(dataSource: UITableViewDataSource,
+                      delegate: UITableViewDelegate) {
+        positionTableView.dataSource = dataSource
+        positionTableView.delegate = delegate
+    }
+    
+    func selectPosition(at indexPath: IndexPath) {
+        positionTableView.selectRow(at: indexPath,
+                                    animated: true,
+                                    scrollPosition: .none)
+    }
 }
 //MARK: - setupConfiguration
 private extension SingUpContentView {
@@ -67,7 +77,7 @@ private extension SingUpContentView {
         configNavigationView()
         configTextFields()
         configSelectPositionLabel()
-        configPositionStackView()
+        configPositionTableView()
         configSignUpButton()
     }
     
@@ -89,35 +99,12 @@ private extension SingUpContentView {
         selectPositionLabel.font = .regular18
     }
     
-    func configPositionStackView() {
-        positionStackView.axis = .vertical
-        positionStackView.spacing = 1
-        positionStackView.alignment = .fill
-        
-        positions.enumerated().forEach { index, position in
-            let positionView = createPositionView(for: position, at: index)
-            positionStackView.addArrangedSubview(positionView)
-        }
-    }
-    
-    func createPositionView(for position: PositionType, at index: Int) -> PositionView {
-        let positionView = PositionView()
-        positionView.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        positionView.setPosition(type: position, isSelected: index == selectedIndex)
-        
-        positionView.onSelect = { [weak self] in
-            self?.handlePositionSelection(at: index, for: positionView)
-        }
-        return positionView
-    }
-    
-    func handlePositionSelection(at index: Int, for positionView: PositionView) {
-        if let currentView = positionStackView.arrangedSubviews[selectedIndex] as? PositionView {
-            currentView.selectButton(isSelected: false)
-        }
-        
-        selectedIndex = index
-        positionView.selectButton(isSelected: true)
+    func configPositionTableView() {
+        positionTableView.register(PositionCell.self,
+                                   forCellReuseIdentifier: PositionCell.reuseIdentifier)
+        positionTableView.backgroundColor = .white
+        positionTableView.separatorStyle = .none
+
     }
     
     func configSignUpButton() {
@@ -134,13 +121,12 @@ private extension SingUpContentView {
     func setupViewsConstraints() {
         setupScrollViewConstraints()
         setupContentViewConstraints()
-        
         setupNavigationViewConstraints()
         setupNameTextFieldConstraints()
         setupEmailTextFieldConstraints()
         setupPhoneTextFieldConstraints()
         setupSelectPositionLabelConstraints()
-        setupPositionStackViewConstraints()
+        setupPositionTableViewConstraints()
         stupPhotoTextFieldConstraints()
         setupSignUpButtonConstraints()
         setupSignUpButtonConstraints()
@@ -163,7 +149,6 @@ private extension SingUpContentView {
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            
             contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
     }
@@ -220,19 +205,20 @@ private extension SingUpContentView {
         ])
     }
     
-    func setupPositionStackViewConstraints() {
-        positionStackView.translatesAutoresizingMaskIntoConstraints = false
+    func setupPositionTableViewConstraints() {
+        positionTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            positionStackView.topAnchor.constraint(equalTo: selectPositionLabel.bottomAnchor, constant: 12),
-            positionStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            positionStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            positionTableView.topAnchor.constraint(equalTo: selectPositionLabel.bottomAnchor, constant: 12),
+            positionTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            positionTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            positionTableView.heightAnchor.constraint(equalToConstant: 192)
         ])
     }
     
     func stupPhotoTextFieldConstraints() {
         photoTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            photoTextField.topAnchor.constraint(equalTo: positionStackView.bottomAnchor, constant: 28),
+            photoTextField.topAnchor.constraint(equalTo: positionTableView.bottomAnchor, constant: 28),
             photoTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             photoTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             photoTextField.heightAnchor.constraint(equalToConstant: 76)

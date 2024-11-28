@@ -57,9 +57,3 @@ final class UsersViewController: BaseTabViewController {
                                  delegate: self)
     }
 }
-
-@available(iOS 17, *)
-#Preview {
-    let view = UsersViewController()
-    return view
-}

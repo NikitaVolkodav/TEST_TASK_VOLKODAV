@@ -1,7 +1,7 @@
 import Foundation
 
 final class UsersViewModel {
-    private let networkManager: NetworkGettable = NetworkManager()
+    private let networkManager: NetworkUsers = NetworkManager()
     private var allUsers: [User] = []
     private var currentPage: Int = 1
     private var maximumPage: Int?

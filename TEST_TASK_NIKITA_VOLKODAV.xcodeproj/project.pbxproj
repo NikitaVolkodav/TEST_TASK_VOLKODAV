@@ -42,7 +42,6 @@
 		7F15CCF02CF0D6A700EEC811 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCEF2CF0D6A700EEC811 /* UserCell.swift */; };
 		7F15CCF22CF0D6D600EEC811 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCF12CF0D6D600EEC811 /* BaseTableViewCell.swift */; };
 		7F15CCF42CF0E71600EEC811 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */; };
-		FD6796052CF5E83B00A7B58B /* PositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6796042CF5E83B00A7B58B /* PositionView.swift */; };
 		FD6796072CF603AA00A7B58B /* AlertContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6796062CF603AA00A7B58B /* AlertContainer.swift */; };
 		FD67960A2CF60E6100A7B58B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FD6796092CF60E6100A7B58B /* Kingfisher */; };
 		FD67960D2CF60E8600A7B58B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FD67960C2CF60E8600A7B58B /* Alamofire */; };
@@ -55,6 +54,9 @@
 		FD67961B2CF7429900A7B58B /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67961A2CF7429900A7B58B /* ObservableValue.swift */; };
 		FD67961D2CF747F000A7B58B /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67961C2CF747F000A7B58B /* UserDetails.swift */; };
 		FD67961F2CF7516B00A7B58B /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD67961E2CF7516B00A7B58B /* LoadingCell.swift */; };
+		FDC1B9292CF87EEF0022B2AD /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9282CF87EEF0022B2AD /* PositionCell.swift */; };
+		FDC1B92B2CF87F660022B2AD /* SingUpViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B92A2CF87F660022B2AD /* SingUpViewController+TableView.swift */; };
+		FDC1B92D2CF890200022B2AD /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B92C2CF890200022B2AD /* PositionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,7 +97,6 @@
 		7F15CCEF2CF0D6A700EEC811 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		7F15CCF12CF0D6D600EEC811 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
-		FD6796042CF5E83B00A7B58B /* PositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionView.swift; sourceTree = "<group>"; };
 		FD6796062CF603AA00A7B58B /* AlertContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContainer.swift; sourceTree = "<group>"; };
 		FD67960E2CF60EA400A7B58B /* KingfisherImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageView.swift; sourceTree = "<group>"; };
 		FD6796102CF60F8500A7B58B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -106,6 +107,9 @@
 		FD67961A2CF7429900A7B58B /* ObservableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
 		FD67961C2CF747F000A7B58B /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		FD67961E2CF7516B00A7B58B /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		FDC1B9282CF87EEF0022B2AD /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
+		FDC1B92A2CF87F660022B2AD /* SingUpViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingUpViewController+TableView.swift"; sourceTree = "<group>"; };
+		FDC1B92C2CF890200022B2AD /* PositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,7 +218,6 @@
 				7F15CCE12CF0B87000EEC811 /* NavigationView.swift */,
 				7F15CCEB2CF0C2AB00EEC811 /* InfoView.swift */,
 				7F15CCF32CF0E71600EEC811 /* CustomTextFieldView.swift */,
-				FD6796042CF5E83B00A7B58B /* PositionView.swift */,
 				FD67960E2CF60EA400A7B58B /* KingfisherImageView.swift */,
 			);
 			path = CustomViews;
@@ -368,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				7F15CCD92CEF875500EEC811 /* SingUpViewController.swift */,
+				FDC1B92A2CF87F660022B2AD /* SingUpViewController+TableView.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -375,6 +379,7 @@
 		7F15CCCD2CEF866F00EEC811 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FDC1B9282CF87EEF0022B2AD /* PositionCell.swift */,
 				7F15CCDB2CEF875C00EEC811 /* SingUpContentView.swift */,
 			);
 			path = Views;
@@ -410,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6796142CF73FAB00A7B58B /* UsersModel.swift */,
+				FDC1B92C2CF890200022B2AD /* PositionModel.swift */,
 				FD67961C2CF747F000A7B58B /* UserDetails.swift */,
 			);
 			path = Models;
@@ -501,6 +507,7 @@
 			files = (
 				FD6796132CF60F9900A7B58B /* NetworkManager.swift in Sources */,
 				7F15CCAA2CEF7C8200EEC811 /* AppCoordinator.swift in Sources */,
+				FDC1B92B2CF87F660022B2AD /* SingUpViewController+TableView.swift in Sources */,
 				7F15CCA82CEF7C7700EEC811 /* BaseCoordinator.swift in Sources */,
 				FD67961D2CF747F000A7B58B /* UserDetails.swift in Sources */,
 				7F15CCDE2CEF876300EEC811 /* SingUpViewModel.swift in Sources */,
@@ -525,6 +532,7 @@
 				7F15CCF02CF0D6A700EEC811 /* UserCell.swift in Sources */,
 				7F15CCC22CEF85F000EEC811 /* TabBarCoordinator.swift in Sources */,
 				7F15CCD02CEF869200EEC811 /* UsersCoordinator.swift in Sources */,
+				FDC1B9292CF87EEF0022B2AD /* PositionCell.swift in Sources */,
 				7F15CCBB2CEF832C00EEC811 /* TextContainer.swift in Sources */,
 				7F15CCA62CEF7C6B00EEC811 /* Coordinator.swift in Sources */,
 				FD67961B2CF7429900A7B58B /* ObservableValue.swift in Sources */,
@@ -533,11 +541,11 @@
 				FD6796152CF73FAB00A7B58B /* UsersModel.swift in Sources */,
 				7F15CCEA2CF0BDE000EEC811 /* Enums.swift in Sources */,
 				7F0606E12CEF59B500790531 /* LaunchViewController.swift in Sources */,
+				FDC1B92D2CF890200022B2AD /* PositionModel.swift in Sources */,
 				7F15CCC42CEF860400EEC811 /* TabBarController.swift in Sources */,
 				7F0606DD2CEF59B500790531 /* AppDelegate.swift in Sources */,
 				FD6796112CF60F8500A7B58B /* NetworkError.swift in Sources */,
 				7F0606DF2CEF59B500790531 /* SceneDelegate.swift in Sources */,
-				FD6796052CF5E83B00A7B58B /* PositionView.swift in Sources */,
 				7F15CCF22CF0D6D600EEC811 /* BaseTableViewCell.swift in Sources */,
 				FD67960F2CF60EA400A7B58B /* KingfisherImageView.swift in Sources */,
 				7F15CCD42CEF86F400EEC811 /* UsersContentView.swift in Sources */,

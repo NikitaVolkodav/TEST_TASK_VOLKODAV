@@ -1,14 +1,15 @@
 import Foundation
 import Alamofire
 
-protocol NetworkGettable {
+protocol NetworkUsers {
     func getUsers(page: String,
                   count: String,
-                  completion: @escaping (Result<UsersModel, NetworkError>) -> Void )
+                  completion: @escaping (Result<UsersModel, NetworkError>) -> Void)
 }
 
-protocol NetworkPostable {
-    func createUser()
+protocol NetworkSignUp {
+    func getPositions(completion: @escaping (Result<PositionModel, NetworkError>) -> Void)
+//    func createUser()
 }
 
 final class NetworkManager {
@@ -23,7 +24,7 @@ final class NetworkManager {
     }()
     
     private func makeURL(for path: String,
-                         queryItems: [URLQueryItem]) -> URL? {
+                         queryItems: [URLQueryItem] = []) -> URL? {
         var components = urlComponents
         components.path = path
         components.queryItems = queryItems
@@ -61,7 +62,7 @@ final class NetworkManager {
         }
     }
 }
-extension NetworkManager: NetworkGettable {
+extension NetworkManager: NetworkUsers {
     func getUsers(page: String,
                   count: String,
                   completion: @escaping (Result<UsersModel, NetworkError>) -> Void) {
@@ -75,6 +76,17 @@ extension NetworkManager: NetworkGettable {
             completion(.failure(.invalidURL))
             return
         }
+        performRequest(with: url, completion: completion)
+    }
+}
+extension NetworkManager: NetworkSignUp {
+    func getPositions(completion: @escaping (Result<PositionModel, NetworkError>) -> Void) {
+        
+        guard let url = makeURL(for: APIEndpoint.positions.path) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
         performRequest(with: url, completion: completion)
     }
 }

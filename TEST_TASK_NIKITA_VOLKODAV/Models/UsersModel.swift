@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - UsersModel
-struct UsersModel: Decodable  {
+struct UsersModel: Decodable {
     let success: Bool
     let total_pages: Int
     let total_users: Int

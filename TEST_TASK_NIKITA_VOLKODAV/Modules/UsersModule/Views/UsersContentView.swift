@@ -83,7 +83,6 @@ private extension UsersContentView {
         tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.reuseIdentifier)
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
-        
     }
 }
 //MARK: - setupConstraints

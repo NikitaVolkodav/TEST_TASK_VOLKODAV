@@ -29,11 +29,6 @@ enum TextContainer {
         static let upload = "Upload"
         
         static let selectPosition = "Select your position"
-        static let front = "Frontend developer"
-        static let back = "Backend developer"
-        static let designer = "Designer"
-        static let qa = "QA"
-        
         static let signUp = "Sign up"
     }
     
