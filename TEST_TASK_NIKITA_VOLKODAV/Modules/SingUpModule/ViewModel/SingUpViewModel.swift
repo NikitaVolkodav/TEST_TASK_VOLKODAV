@@ -36,7 +36,7 @@ final class SingUpViewModel {
     }
     
     func createUser() {
-        guard let photoData = UIImage.customMok.jpegData(compressionQuality: 0.8) else {
+        guard let photoData = imageStorageService.getImage()?.jpegData(compressionQuality: 0.8) else {
             return
         }
         

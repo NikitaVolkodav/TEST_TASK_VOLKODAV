@@ -10,8 +10,8 @@ final class ImageStorageService {
         currentImageName = name
     }
     
-    func getImage() -> (UIImage?, String?) {
-        (currentImage, currentImageName)
+    func getImage() -> UIImage? {
+        currentImage
     }
     
     func isImageAdded() -> Bool {

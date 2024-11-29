@@ -68,7 +68,6 @@ private extension SingUpViewController {
     func setupSignUpButton() {
         contentView.signUpAction = { [weak self] in
             guard let self = self else { return }
-            let getText = contentView.getTextFieldTexts()
             viewModel.createUser()
         }
     }
@@ -82,9 +81,10 @@ extension SingUpViewController: UIImagePickerControllerDelegate,
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             let imageName = "image_\(UUID().uuidString).png"
+            viewModel.handlePickedImage(selectedImage, imageName: imageName)
             contentView.setPhotoTextField(name: imageName)
             contentView.setDefaultPhotoTextField()
-            viewModel.handlePickedImage(selectedImage, imageName: imageName)
+            validateInputs()
         }
         picker.dismiss(animated: true)
     }
