@@ -11,4 +11,11 @@ final class SingUpCoordinator: BaseCoordinator {
         navigationController.pushViewController(singUpViewController,
                                                 animated: true)
     }
+    
+    func runSignUpInfo(with status: InfoViewStatus) {
+        let signUpInfoCoordinator = SignUpInfoCoordinator(navigationController: navigationController, status: status)
+        signUpInfoCoordinator.parentCoordinator = self
+        add(coordinator: signUpInfoCoordinator)
+        signUpInfoCoordinator.start()
+    }
 }

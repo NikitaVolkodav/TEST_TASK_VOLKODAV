@@ -52,9 +52,20 @@ final class SingUpViewModel {
             switch result {
             case .success(let response):
                 print("User registered successfully: \(response)")
+                self.handleCreateUserResponse(result: response)
             case .failure(let error):
                 print("Failed to register user: \(error)")
             }
+        }
+    }
+    
+    private func handleCreateUserResponse(result: UserPostResponse) {
+        if result.success {
+            runSignUpInfo(with: .registered)
+        } else if result.message == "User with this phone or email already exist" {
+            runSignUpInfo(with: .email)
+        } else {
+            return
         }
     }
     
@@ -114,6 +125,10 @@ private extension SingUpViewModel {
 extension SingUpViewModel {
     func goBack() {
         coordinator?.goBack()
+    }
+    
+    func runSignUpInfo(with status: InfoViewStatus) {
+        coordinator?.runSignUpInfo(with: status)
     }
 }
 //MARK: - Alerts

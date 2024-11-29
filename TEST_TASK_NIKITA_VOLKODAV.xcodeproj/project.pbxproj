@@ -63,6 +63,10 @@
 		FDC1B9392CF907600022B2AD /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9382CF907600022B2AD /* ValidationService.swift */; };
 		FDC1B93F2CFA003D0022B2AD /* MediaAccessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B93E2CFA003D0022B2AD /* MediaAccessService.swift */; };
 		FDC1B9412CFA03930022B2AD /* ImageStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9402CFA03930022B2AD /* ImageStorageService.swift */; };
+		FDC1B9492CFA0AFE0022B2AD /* SignUpInfoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9482CFA0AFE0022B2AD /* SignUpInfoCoordinator.swift */; };
+		FDC1B94B2CFA0B510022B2AD /* SignUpInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B94A2CFA0B510022B2AD /* SignUpInfoViewController.swift */; };
+		FDC1B94D2CFA0B940022B2AD /* SignUpInfoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B94C2CFA0B940022B2AD /* SignUpInfoContentView.swift */; };
+		FDC1B94F2CFA0BB40022B2AD /* SignUpInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B94E2CFA0BB40022B2AD /* SignUpInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +126,10 @@
 		FDC1B9382CF907600022B2AD /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		FDC1B93E2CFA003D0022B2AD /* MediaAccessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAccessService.swift; sourceTree = "<group>"; };
 		FDC1B9402CFA03930022B2AD /* ImageStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorageService.swift; sourceTree = "<group>"; };
+		FDC1B9482CFA0AFE0022B2AD /* SignUpInfoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoCoordinator.swift; sourceTree = "<group>"; };
+		FDC1B94A2CFA0B510022B2AD /* SignUpInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoViewController.swift; sourceTree = "<group>"; };
+		FDC1B94C2CFA0B940022B2AD /* SignUpInfoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoContentView.swift; sourceTree = "<group>"; };
+		FDC1B94E2CFA0BB40022B2AD /* SignUpInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +221,7 @@
 		7F15CC9E2CEF7C2100EEC811 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FDC1B9432CFA0ABE0022B2AD /* SignUpInfoModule */,
 				7F15CCC62CEF863200EEC811 /* SingUpModule */,
 				7F15CCC52CEF862700EEC811 /* UsersModule */,
 				7F15CCBD2CEF85C100EEC811 /* TabBarModule */,
@@ -447,6 +456,49 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		FDC1B9432CFA0ABE0022B2AD /* SignUpInfoModule */ = {
+			isa = PBXGroup;
+			children = (
+				FDC1B9472CFA0AE00022B2AD /* ViewModel */,
+				FDC1B9462CFA0ADC0022B2AD /* Views */,
+				FDC1B9452CFA0AD50022B2AD /* ViewController */,
+				FDC1B9442CFA0ACF0022B2AD /* Coordinator */,
+			);
+			path = SignUpInfoModule;
+			sourceTree = "<group>";
+		};
+		FDC1B9442CFA0ACF0022B2AD /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FDC1B9482CFA0AFE0022B2AD /* SignUpInfoCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FDC1B9452CFA0AD50022B2AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FDC1B94A2CFA0B510022B2AD /* SignUpInfoViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FDC1B9462CFA0ADC0022B2AD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDC1B94C2CFA0B940022B2AD /* SignUpInfoContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FDC1B9472CFA0AE00022B2AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FDC1B94E2CFA0BB40022B2AD /* SignUpInfoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -535,6 +587,7 @@
 				7F15CCD82CEF874900EEC811 /* SingUpCoordinator.swift in Sources */,
 				7F15CCB92CEF80F600EEC811 /* LogoView.swift in Sources */,
 				FDC1B9412CFA03930022B2AD /* ImageStorageService.swift in Sources */,
+				FDC1B94F2CFA0BB40022B2AD /* SignUpInfoViewModel.swift in Sources */,
 				7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */,
 				FDC1B9372CF904000022B2AD /* SingUpViewController+TextField.swift in Sources */,
 				FD6796172CF7413D00A7B58B /* QueryParameter.swift in Sources */,
@@ -564,10 +617,13 @@
 				7F15CCB52CEF7E2B00EEC811 /* BaseInitView.swift in Sources */,
 				FD6796152CF73FAB00A7B58B /* UsersModel.swift in Sources */,
 				7F15CCEA2CF0BDE000EEC811 /* Enums.swift in Sources */,
+				FDC1B94D2CFA0B940022B2AD /* SignUpInfoContentView.swift in Sources */,
+				FDC1B9492CFA0AFE0022B2AD /* SignUpInfoCoordinator.swift in Sources */,
 				7F0606E12CEF59B500790531 /* LaunchViewController.swift in Sources */,
 				FDC1B92D2CF890200022B2AD /* PositionModel.swift in Sources */,
 				7F15CCC42CEF860400EEC811 /* TabBarController.swift in Sources */,
 				7F0606DD2CEF59B500790531 /* AppDelegate.swift in Sources */,
+				FDC1B94B2CFA0B510022B2AD /* SignUpInfoViewController.swift in Sources */,
 				FD6796112CF60F8500A7B58B /* NetworkError.swift in Sources */,
 				7F0606DF2CEF59B500790531 /* SceneDelegate.swift in Sources */,
 				7F15CCF22CF0D6D600EEC811 /* BaseTableViewCell.swift in Sources */,

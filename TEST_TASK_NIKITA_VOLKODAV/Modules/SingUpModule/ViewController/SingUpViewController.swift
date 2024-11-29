@@ -93,9 +93,3 @@ extension SingUpViewController: UIImagePickerControllerDelegate,
         picker.dismiss(animated: true)
     }
 }
-
-@available(iOS 17, *)
-#Preview {
-    let view = SingUpViewController()
-    return view
-}
