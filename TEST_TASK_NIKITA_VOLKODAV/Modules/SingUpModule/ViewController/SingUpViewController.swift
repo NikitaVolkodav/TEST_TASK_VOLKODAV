@@ -2,7 +2,7 @@ import UIKit
 
 final class SingUpViewController: BaseTabViewController {
     
-    private let contentView = SingUpContentView()
+    let contentView = SingUpContentView()
     let viewModel = SingUpViewModel()
     
     override func loadView() {
@@ -12,6 +12,7 @@ final class SingUpViewController: BaseTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startLoading()
+        setupTextFields()
         configButtons()
         setupPositionTableView()
     }
@@ -21,7 +22,12 @@ final class SingUpViewController: BaseTabViewController {
         selectInitialPosition()
     }
     
-    func startLoading() {
+    func validateInputs() {
+       let isEnabled = viewModel.canEnableSignUpButton()
+       contentView.enableSignUpButton(isEnabled: isEnabled)
+   }
+    
+    private func startLoading() {
         viewModel.loadPositions()
         viewModel.$isLoading.bind { [weak self] isLoading in
             guard let self else { return }
@@ -29,6 +35,10 @@ final class SingUpViewController: BaseTabViewController {
                 self.contentView.reloadTableView()
             }
         }
+    }
+    
+    private func setupTextFields() {
+        contentView.setTextFieldDelegate(delegate: self)
     }
     
     private func selectInitialPosition() {
@@ -45,12 +55,21 @@ final class SingUpViewController: BaseTabViewController {
 private extension SingUpViewController {
     func configButtons() {
         setupUploadButton()
+        setupSignUpButton()
     }
     
     func setupUploadButton() {
         contentView.setUploadAction { [weak self] in
             guard let self = self else { return }
             viewModel.showChoosePhotoAler(on: self)
+        }
+    }
+    
+    func setupSignUpButton() {
+        contentView.signUpAction = { [weak self] in
+            guard let self = self else { return }
+            let getText = contentView.getTextFieldTexts()
+            viewModel.createUser()
         }
     }
 }

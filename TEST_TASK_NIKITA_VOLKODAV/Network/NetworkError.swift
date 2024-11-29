@@ -6,4 +6,8 @@ enum NetworkError: Error {
     case decodingError
     case networkError
     case noInternetConnection
+    case unauthorized
+    case conflict
+    case validationFailed
+    case tokenSaveError
 }

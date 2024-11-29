@@ -35,7 +35,39 @@ final class CustomTextFieldView: BaseInitView {
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
         
         infoLabel.text = infoText
+        infoLabel.textColor = .gray
+        textField.layer.borderColor = UIColor.lightGray.cgColor
         uploadButton.isHidden = isHiddenUpload
+    }
+    
+    func isUserEnabled(bool: Bool) {
+        textField.isUserInteractionEnabled = bool
+    }
+    
+    func invalidText(placeholder: String, infoText: String) {
+        textField.placeholder = placeholder
+        
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.systemRed
+        ]
+        
+        textField.attributedPlaceholder = NSAttributedString(string: placeholder,
+                                                             attributes: attributes)
+        infoLabel.text = infoText
+        infoLabel.textColor = .systemRed
+        textField.layer.borderColor = UIColor.systemRed.cgColor
+    }
+    
+    func getTextFieldText() -> String {
+        textField.text ?? ""
+    }
+    
+    func getTextField() -> UITextField {
+        textField
+    }
+    
+    func setTextFieldDelegate(delegate: UITextFieldDelegate) {
+        textField.delegate = delegate
     }
 }
 //MARK: - setupConfiguration
@@ -55,6 +87,7 @@ private extension CustomTextFieldView {
         textField.layer.cornerRadius = 4
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.autocapitalizationType = .none
     }
     
     func configInfoLabel() {

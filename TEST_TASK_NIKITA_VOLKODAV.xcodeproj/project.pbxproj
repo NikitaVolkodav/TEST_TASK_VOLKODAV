@@ -57,6 +57,10 @@
 		FDC1B9292CF87EEF0022B2AD /* PositionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9282CF87EEF0022B2AD /* PositionCell.swift */; };
 		FDC1B92B2CF87F660022B2AD /* SingUpViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B92A2CF87F660022B2AD /* SingUpViewController+TableView.swift */; };
 		FDC1B92D2CF890200022B2AD /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B92C2CF890200022B2AD /* PositionModel.swift */; };
+		FDC1B92F2CF89C270022B2AD /* UserPostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B92E2CF89C270022B2AD /* UserPostResponse.swift */; };
+		FDC1B9312CF89F4A0022B2AD /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9302CF89F4A0022B2AD /* KeychainManager.swift */; };
+		FDC1B9372CF904000022B2AD /* SingUpViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9362CF904000022B2AD /* SingUpViewController+TextField.swift */; };
+		FDC1B9392CF907600022B2AD /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9382CF907600022B2AD /* ValidationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +114,10 @@
 		FDC1B9282CF87EEF0022B2AD /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
 		FDC1B92A2CF87F660022B2AD /* SingUpViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingUpViewController+TableView.swift"; sourceTree = "<group>"; };
 		FDC1B92C2CF890200022B2AD /* PositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
+		FDC1B92E2CF89C270022B2AD /* UserPostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostResponse.swift; sourceTree = "<group>"; };
+		FDC1B9302CF89F4A0022B2AD /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		FDC1B9362CF904000022B2AD /* SingUpViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingUpViewController+TextField.swift"; sourceTree = "<group>"; };
+		FDC1B9382CF907600022B2AD /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +380,7 @@
 			children = (
 				7F15CCD92CEF875500EEC811 /* SingUpViewController.swift */,
 				FDC1B92A2CF87F660022B2AD /* SingUpViewController+TableView.swift */,
+				FDC1B9362CF904000022B2AD /* SingUpViewController+TextField.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -396,6 +405,8 @@
 		FD6795FE2CF5D85200A7B58B /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FDC1B9302CF89F4A0022B2AD /* KeychainManager.swift */,
+				FDC1B9382CF907600022B2AD /* ValidationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -417,6 +428,7 @@
 				FD6796142CF73FAB00A7B58B /* UsersModel.swift */,
 				FDC1B92C2CF890200022B2AD /* PositionModel.swift */,
 				FD67961C2CF747F000A7B58B /* UserDetails.swift */,
+				FDC1B92E2CF89C270022B2AD /* UserPostResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -512,15 +524,19 @@
 				FD67961D2CF747F000A7B58B /* UserDetails.swift in Sources */,
 				7F15CCDE2CEF876300EEC811 /* SingUpViewModel.swift in Sources */,
 				7F15CCDA2CEF875500EEC811 /* SingUpViewController.swift in Sources */,
+				FDC1B92F2CF89C270022B2AD /* UserPostResponse.swift in Sources */,
 				7F15CCD82CEF874900EEC811 /* SingUpCoordinator.swift in Sources */,
 				7F15CCB92CEF80F600EEC811 /* LogoView.swift in Sources */,
 				7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */,
+				FDC1B9372CF904000022B2AD /* SingUpViewController+TextField.swift in Sources */,
 				FD6796172CF7413D00A7B58B /* QueryParameter.swift in Sources */,
 				7F15CCEC2CF0C2AB00EEC811 /* InfoView.swift in Sources */,
+				FDC1B9392CF907600022B2AD /* ValidationService.swift in Sources */,
 				7F15CCB12CEF7CE600EEC811 /* LaunchCoordinator.swift in Sources */,
 				7F15CCF42CF0E71600EEC811 /* CustomTextFieldView.swift in Sources */,
 				7F15CCEE2CF0D62200EEC811 /* UsersViewController+TableView.swift in Sources */,
 				7F15CCB72CEF7E9A00EEC811 /* LaunchViewModel.swift in Sources */,
+				FDC1B9312CF89F4A0022B2AD /* KeychainManager.swift in Sources */,
 				FD6796072CF603AA00A7B58B /* AlertContainer.swift in Sources */,
 				FD6796192CF741E700A7B58B /* APIEndpoint.swift in Sources */,
 				7F15CCD22CEF86D400EEC811 /* UsersViewController.swift in Sources */,

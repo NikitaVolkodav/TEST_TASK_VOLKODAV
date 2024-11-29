@@ -14,6 +14,8 @@ final class SingUpContentView: BaseInitView {
     private let positionTableView = UITableView()
     private let signUpButton = UIButton()
     
+    var signUpAction: (() -> Void)?
+    
     override func setView() {
         backgroundColor = .white
     }
@@ -70,6 +72,59 @@ final class SingUpContentView: BaseInitView {
                                     animated: true,
                                     scrollPosition: .none)
     }
+    
+    func getNameTextField() -> UITextField {
+        nameTextField.getTextField()
+    }
+    
+    func getEmaiTextField() -> UITextField {
+        emailTextField.getTextField()
+    }
+    
+    func getPhoneTextField() -> UITextField {
+        phoneTextField.getTextField()
+    }
+    
+    func setTextFieldDelegate(delegate: UITextFieldDelegate) {
+        nameTextField.setTextFieldDelegate(delegate: delegate)
+        emailTextField.setTextFieldDelegate(delegate: delegate)
+        phoneTextField.setTextFieldDelegate(delegate: delegate)
+    }
+    
+    func setNameInvalidText(placeholder: String, infoText: String) {
+        nameTextField.invalidText(placeholder: placeholder, infoText: infoText)
+    }
+    
+    func setEmailInvalidText(placeholder: String, infoText: String) {
+        emailTextField.invalidText(placeholder: placeholder, infoText: infoText)
+    }
+    
+    func setPhoneInvalidText(placeholder: String, infoText: String) {
+        phoneTextField.invalidText(placeholder: placeholder, infoText: infoText)
+    }
+    
+    func setDefaultNameTextField() {
+        nameTextField.setupTextField(placeholder: TextContainer.SingUpScreen.name)
+    }
+    
+    func setDefaultEmailTextField() {
+        emailTextField.setupTextField(placeholder: TextContainer.SingUpScreen.email)
+    }
+    
+    func setDefaultPhoneTextField() {
+        phoneTextField.setupTextField(placeholder: TextContainer.SingUpScreen.phone,
+                                      infoText: TextContainer.SingUpScreen.phoneMask)
+    }
+    
+    func getTextFieldTexts() -> (name: String,
+                                 email: String,
+                                 phone: String,
+                                 photo: String) {
+        return (name: nameTextField.getTextFieldText(),
+                email: emailTextField.getTextFieldText(),
+                phone: phoneTextField.getTextFieldText(),
+                photo: photoTextField.getTextFieldText())
+    }
 }
 //MARK: - setupConfiguration
 private extension SingUpContentView {
@@ -79,6 +134,7 @@ private extension SingUpContentView {
         configSelectPositionLabel()
         configPositionTableView()
         configSignUpButton()
+        configTapGestureToDismissKeyboard()
     }
     
     func configNavigationView() {
@@ -92,6 +148,7 @@ private extension SingUpContentView {
                                       infoText: TextContainer.SingUpScreen.phoneMask)
         photoTextField.setupTextField(placeholder: TextContainer.SingUpScreen.photo,
                                       isHiddenUpload: false)
+        photoTextField.isUserEnabled(bool: false)
     }
     
     func configSelectPositionLabel() {
@@ -114,6 +171,24 @@ private extension SingUpContentView {
                               for: .normal)
         signUpButton.setTitleColor(.darkGray, for: .normal)
         signUpButton.isUserInteractionEnabled = false
+        updateAction()
+    }
+    
+    func updateAction() {
+        let action = UIAction { [weak self] _ in
+            self?.signUpAction?()
+        }
+        signUpButton.addAction(action, for: .touchUpInside)
+    }
+    
+    func configTapGestureToDismissKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        addGestureRecognizer(tapGesture)
+    }
+
+    @objc func dismissKeyboard() {
+        endEditing(true)
     }
 }
 //MARK: - setupConstraints

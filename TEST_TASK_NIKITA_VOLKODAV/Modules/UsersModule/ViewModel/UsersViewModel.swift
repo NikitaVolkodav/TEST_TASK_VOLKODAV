@@ -29,6 +29,11 @@ final class UsersViewModel {
             self.isLoading = false
         }
     }
+    
+    func resetUsers() {
+        currentPage = 1
+        allUsers.removeAll()
+    }
 }
 //MARK: - Network
 private extension UsersViewModel {

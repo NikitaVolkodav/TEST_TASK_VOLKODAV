@@ -12,6 +12,7 @@ final class UsersViewController: BaseTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         startLoading()
+        setupRefreshAction()
         setupInternetAction()
         setupTableView()
     }
@@ -40,6 +41,18 @@ final class UsersViewController: BaseTabViewController {
                 if hasError {
                     self.contentView.setInfoView(by: .empty)
                 }
+            }
+        }
+    }
+    
+    private func setupRefreshAction() {
+        contentView.refreshAction = { [weak self] in
+            guard let self = self else { return }
+            viewModel.resetUsers()
+            startLoading()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+                guard let self = self else { return }
+                self.contentView.endRefreshing()
             }
         }
     }

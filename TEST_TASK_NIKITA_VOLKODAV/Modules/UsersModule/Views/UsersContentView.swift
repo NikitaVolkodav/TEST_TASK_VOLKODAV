@@ -5,6 +5,9 @@ final class UsersContentView: BaseInitView {
     private let navigationView = NavigationView()
     private let infoView = InfoView()
     private let tableView = UITableView()
+    private let refreshControl = UIRefreshControl()
+    
+    var refreshAction: (() -> Void)?
     
     override func setView() {
         backgroundColor = .white
@@ -61,6 +64,10 @@ final class UsersContentView: BaseInitView {
         tableView.dataSource = dataSource
         tableView.delegate = delegate
     }
+    
+    func endRefreshing() {
+        refreshControl.endRefreshing()
+    }
 }
 //MARK: - setupConfiguration
 private extension UsersContentView {
@@ -68,6 +75,7 @@ private extension UsersContentView {
         configNavigationView()
         configInfoView()
         configTableView()
+        configRefreshControl()
     }
     
     func configNavigationView() {
@@ -83,6 +91,16 @@ private extension UsersContentView {
         tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.reuseIdentifier)
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
+        tableView.refreshControl = refreshControl 
+    }
+    
+    func configRefreshControl() {
+        refreshControl.tintColor = .gray
+        refreshControl.addTarget(self, action: #selector(refresSelector), for: .valueChanged)
+    }
+    
+    @objc func refresSelector() {
+        refreshAction?()
     }
 }
 //MARK: - setupConstraints
