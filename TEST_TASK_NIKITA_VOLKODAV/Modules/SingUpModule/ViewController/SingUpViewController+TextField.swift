@@ -6,7 +6,9 @@ extension SingUpViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
@@ -33,6 +35,8 @@ extension SingUpViewController: UITextFieldDelegate {
          } else if textField == contentView.getPhoneTextField() {
              validatePhoneTextField()
          }
+        validatePhotoTextField()
+
      }
     
     private func validateNameTextField() {
@@ -71,6 +75,16 @@ extension SingUpViewController: UITextFieldDelegate {
                                             infoText: "Invalid phone format")
         } else {
             contentView.setDefaultPhoneTextField()
+        }
+    }
+    
+    private func validatePhotoTextField() {
+        let photo = contentView.getPhotoTextField().text ?? ""
+        if photo.isEmpty {
+            contentView.setPhotoInvalidText(placeholder: "Upload your photo",
+                                            infoText: "Photo is required")
+        } else {
+            contentView.setDefaultPhotoTextField()
         }
     }
      

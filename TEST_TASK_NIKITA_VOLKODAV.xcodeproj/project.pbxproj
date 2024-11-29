@@ -61,6 +61,8 @@
 		FDC1B9312CF89F4A0022B2AD /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9302CF89F4A0022B2AD /* KeychainManager.swift */; };
 		FDC1B9372CF904000022B2AD /* SingUpViewController+TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9362CF904000022B2AD /* SingUpViewController+TextField.swift */; };
 		FDC1B9392CF907600022B2AD /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9382CF907600022B2AD /* ValidationService.swift */; };
+		FDC1B93F2CFA003D0022B2AD /* MediaAccessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B93E2CFA003D0022B2AD /* MediaAccessService.swift */; };
+		FDC1B9412CFA03930022B2AD /* ImageStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9402CFA03930022B2AD /* ImageStorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +120,8 @@
 		FDC1B9302CF89F4A0022B2AD /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		FDC1B9362CF904000022B2AD /* SingUpViewController+TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SingUpViewController+TextField.swift"; sourceTree = "<group>"; };
 		FDC1B9382CF907600022B2AD /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		FDC1B93E2CFA003D0022B2AD /* MediaAccessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAccessService.swift; sourceTree = "<group>"; };
+		FDC1B9402CFA03930022B2AD /* ImageStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +411,8 @@
 			children = (
 				FDC1B9302CF89F4A0022B2AD /* KeychainManager.swift */,
 				FDC1B9382CF907600022B2AD /* ValidationService.swift */,
+				FDC1B93E2CFA003D0022B2AD /* MediaAccessService.swift */,
+				FDC1B9402CFA03930022B2AD /* ImageStorageService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -523,10 +529,12 @@
 				7F15CCA82CEF7C7700EEC811 /* BaseCoordinator.swift in Sources */,
 				FD67961D2CF747F000A7B58B /* UserDetails.swift in Sources */,
 				7F15CCDE2CEF876300EEC811 /* SingUpViewModel.swift in Sources */,
+				FDC1B93F2CFA003D0022B2AD /* MediaAccessService.swift in Sources */,
 				7F15CCDA2CEF875500EEC811 /* SingUpViewController.swift in Sources */,
 				FDC1B92F2CF89C270022B2AD /* UserPostResponse.swift in Sources */,
 				7F15CCD82CEF874900EEC811 /* SingUpCoordinator.swift in Sources */,
 				7F15CCB92CEF80F600EEC811 /* LogoView.swift in Sources */,
+				FDC1B9412CFA03930022B2AD /* ImageStorageService.swift in Sources */,
 				7F15CCDC2CEF875C00EEC811 /* SingUpContentView.swift in Sources */,
 				FDC1B9372CF904000022B2AD /* SingUpViewController+TextField.swift in Sources */,
 				FD6796172CF7413D00A7B58B /* QueryParameter.swift in Sources */,
@@ -711,6 +719,8 @@
 				DEVELOPMENT_TEAM = 5XHF8YABJ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TEST_TASK_NIKITA_VOLKODAV/SuportingFiles/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to take photos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to upload photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -738,6 +748,8 @@
 				DEVELOPMENT_TEAM = 5XHF8YABJ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TEST_TASK_NIKITA_VOLKODAV/SuportingFiles/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to your camera to take photos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app requires access to your photo library to upload photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

@@ -69,6 +69,16 @@ final class CustomTextFieldView: BaseInitView {
     func setTextFieldDelegate(delegate: UITextFieldDelegate) {
         textField.delegate = delegate
     }
+    
+    func setTextFieldText(text: String) {
+        textField.text = text
+    }
+    
+    func setRightView() {
+        let rightPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 80, height: textField.frame.height))
+        textField.rightView = rightPaddingView
+        textField.rightViewMode = .always
+    }
 }
 //MARK: - setupConfiguration
 private extension CustomTextFieldView {
@@ -82,6 +92,7 @@ private extension CustomTextFieldView {
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
         textField.leftView = leftPaddingView
         textField.leftViewMode = .always
+        
         textField.textColor = .black
         
         textField.layer.cornerRadius = 4

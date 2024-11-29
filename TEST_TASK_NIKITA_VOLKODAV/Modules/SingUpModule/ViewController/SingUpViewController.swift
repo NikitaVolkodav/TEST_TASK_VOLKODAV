@@ -74,6 +74,26 @@ private extension SingUpViewController {
     }
 }
 
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension SingUpViewController: UIImagePickerControllerDelegate,
+                                UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        if let selectedImage = info[.originalImage] as? UIImage {
+            let imageName = "image_\(UUID().uuidString).png"
+            contentView.setPhotoTextField(name: imageName)
+            contentView.setDefaultPhotoTextField()
+            viewModel.handlePickedImage(selectedImage, imageName: imageName)
+        }
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+}
+
 @available(iOS 17, *)
 #Preview {
     let view = SingUpViewController()

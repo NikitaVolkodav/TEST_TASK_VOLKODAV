@@ -85,10 +85,15 @@ final class SingUpContentView: BaseInitView {
         phoneTextField.getTextField()
     }
     
+    func getPhotoTextField() -> UITextField {
+        photoTextField.getTextField()
+    }
+    
     func setTextFieldDelegate(delegate: UITextFieldDelegate) {
         nameTextField.setTextFieldDelegate(delegate: delegate)
         emailTextField.setTextFieldDelegate(delegate: delegate)
         phoneTextField.setTextFieldDelegate(delegate: delegate)
+        photoTextField.setTextFieldDelegate(delegate: delegate)
     }
     
     func setNameInvalidText(placeholder: String, infoText: String) {
@@ -101,6 +106,10 @@ final class SingUpContentView: BaseInitView {
     
     func setPhoneInvalidText(placeholder: String, infoText: String) {
         phoneTextField.invalidText(placeholder: placeholder, infoText: infoText)
+    }
+    
+    func setPhotoInvalidText(placeholder: String, infoText: String) {
+        photoTextField.invalidText(placeholder: placeholder, infoText: infoText)
     }
     
     func setDefaultNameTextField() {
@@ -116,6 +125,11 @@ final class SingUpContentView: BaseInitView {
                                       infoText: TextContainer.SingUpScreen.phoneMask)
     }
     
+    func setDefaultPhotoTextField() {
+        photoTextField.setupTextField(placeholder: TextContainer.SingUpScreen.photo,
+                                      isHiddenUpload: false)
+    }
+    
     func getTextFieldTexts() -> (name: String,
                                  email: String,
                                  phone: String,
@@ -124,6 +138,10 @@ final class SingUpContentView: BaseInitView {
                 email: emailTextField.getTextFieldText(),
                 phone: phoneTextField.getTextFieldText(),
                 photo: photoTextField.getTextFieldText())
+    }
+    
+    func setPhotoTextField(name: String) {
+        photoTextField.setTextFieldText(text: name)
     }
 }
 //MARK: - setupConfiguration
@@ -149,6 +167,7 @@ private extension SingUpContentView {
         photoTextField.setupTextField(placeholder: TextContainer.SingUpScreen.photo,
                                       isHiddenUpload: false)
         photoTextField.isUserEnabled(bool: false)
+        photoTextField.setRightView()
     }
     
     func configSelectPositionLabel() {

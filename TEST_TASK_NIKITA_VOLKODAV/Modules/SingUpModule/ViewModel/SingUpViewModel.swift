@@ -4,6 +4,7 @@ final class SingUpViewModel {
     private let networkManager: NetworkSignUp = NetworkManager()
     private var positionModel: PositionModel?
     private var selectedPositionId = 1
+    private let imageStorageService = ImageStorageService()
     weak var coordinator: SingUpCoordinator?
     var selectedItemIndex = IndexPath(item: 0, section: 0)
     
@@ -71,8 +72,9 @@ final class SingUpViewModel {
 
     func canEnableSignUpButton() -> Bool {
         return ValidationService.isValidName(name) &&
-               ValidationService.isValidEmail(email) &&
-               ValidationService.isValidPhone(phone)
+        ValidationService.isValidEmail(email) &&
+        ValidationService.isValidPhone(phone) &&
+        imageStorageService.isImageAdded()
     }
 }
 //MARK: - Network
@@ -116,14 +118,38 @@ extension SingUpViewModel {
 }
 //MARK: - Alerts
 extension SingUpViewModel {
+    
+    private func showAlertNeedPermissionToCameraAndGallery(on view: UIViewController) {
+        AlertContainer.showAlert(on: view,
+                                 for: .needPermissionToCameraAndGallery(goToSettings: { [weak self] in
+            guard self != nil else { return }
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                  UIApplication.shared.canOpenURL(settingsUrl) else { return }
+            UIApplication.shared.open(settingsUrl)
+        }))
+    }
+    
     func showChoosePhotoAler(on view: UIViewController) {
         AlertContainer.showAlert(on: view,
                                  for: .choosePhoto(camera: { [weak self] in
             guard let self = self else { return }
-            print("Camera")
-        }, gallery: {
-            print("Gallery")
+            MediaAccessService.openImagePicker(on: view, source: .camera) { granted in
+                if !granted {
+                    self.showAlertNeedPermissionToCameraAndGallery(on: view)
+                }
+            }
+        }, gallery: { [weak self] in
+            guard let self = self else { return }
+            MediaAccessService.openImagePicker(on: view, source: .gallery) { granted in
+                if !granted {
+                    self.showAlertNeedPermissionToCameraAndGallery(on: view)
+                }
+            }
         }))
+    }
+    
+    func handlePickedImage(_ image: UIImage, imageName: String) {
+        imageStorageService.saveImage(image, withName: imageName)
     }
 }
 //MARK: - DataSource
