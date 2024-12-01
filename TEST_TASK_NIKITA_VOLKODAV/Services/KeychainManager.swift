@@ -36,12 +36,4 @@ final class KeychainManager {
         }
         return token
     }
-
-    func deleteToken() -> Bool {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: authTokenKey
-        ]
-        return SecItemDelete(query as CFDictionary) == errSecSuccess
-    }
 }

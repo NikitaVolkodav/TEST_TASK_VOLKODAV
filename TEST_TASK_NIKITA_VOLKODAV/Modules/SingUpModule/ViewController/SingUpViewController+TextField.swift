@@ -1,7 +1,6 @@
 import UIKit
 //MARK: - UITextFieldDelegate
 extension SingUpViewController: UITextFieldDelegate {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
     }

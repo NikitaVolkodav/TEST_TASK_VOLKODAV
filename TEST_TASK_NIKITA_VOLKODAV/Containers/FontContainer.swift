@@ -15,5 +15,4 @@ extension UIFont {
     static let regular18 = UIFont.customFont(style: .regular, size: 18)
     static let regular20 = UIFont.customFont(style: .regular, size: 20)
     static let semibold18 = UIFont.customFont(style: .semibold, size: 18)
-    static let semibold10 = UIFont.customFont(style: .semibold, size: 10)
 }

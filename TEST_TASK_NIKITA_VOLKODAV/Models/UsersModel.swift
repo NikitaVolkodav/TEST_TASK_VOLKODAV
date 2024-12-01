@@ -4,15 +4,9 @@ import Foundation
 struct UsersModel: Decodable {
     let success: Bool
     let total_pages: Int
-    let total_users: Int
     let count: Int
     let page: Int
-    let links: Links
     let users: [User]
-}
-// MARK: - Links
-struct Links: Decodable  {
-    let next_url: String
 }
 // MARK: - User
 struct User: Decodable {

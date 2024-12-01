@@ -130,16 +130,6 @@ final class SingUpContentView: BaseInitView {
                                       isHiddenUpload: false)
     }
     
-    func getTextFieldTexts() -> (name: String,
-                                 email: String,
-                                 phone: String,
-                                 photo: String) {
-        return (name: nameTextField.getTextFieldText(),
-                email: emailTextField.getTextFieldText(),
-                phone: phoneTextField.getTextFieldText(),
-                photo: photoTextField.getTextFieldText())
-    }
-    
     func setPhotoTextField(name: String) {
         photoTextField.setTextFieldText(text: name)
     }

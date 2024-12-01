@@ -58,10 +58,6 @@ final class CustomTextFieldView: BaseInitView {
         textField.layer.borderColor = UIColor.systemRed.cgColor
     }
     
-    func getTextFieldText() -> String {
-        textField.text ?? ""
-    }
-    
     func getTextField() -> UITextField {
         textField
     }

@@ -21,6 +21,10 @@ extension SingUpViewController: UITableViewDataSource {
 //MARK: - UITableViewDelegate
 extension SingUpViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectPosition(at: indexPath)
+    }
+    func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
         48
     }
