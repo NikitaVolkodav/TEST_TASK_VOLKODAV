@@ -67,6 +67,7 @@
 		FDC1B94B2CFA0B510022B2AD /* SignUpInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B94A2CFA0B510022B2AD /* SignUpInfoViewController.swift */; };
 		FDC1B94D2CFA0B940022B2AD /* SignUpInfoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B94C2CFA0B940022B2AD /* SignUpInfoContentView.swift */; };
 		FDC1B94F2CFA0BB40022B2AD /* SignUpInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B94E2CFA0BB40022B2AD /* SignUpInfoViewModel.swift */; };
+		FDC1B9512CFC96BD0022B2AD /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC1B9502CFC96BD0022B2AD /* TokenResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		FDC1B94A2CFA0B510022B2AD /* SignUpInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoViewController.swift; sourceTree = "<group>"; };
 		FDC1B94C2CFA0B940022B2AD /* SignUpInfoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoContentView.swift; sourceTree = "<group>"; };
 		FDC1B94E2CFA0BB40022B2AD /* SignUpInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInfoViewModel.swift; sourceTree = "<group>"; };
+		FDC1B9502CFC96BD0022B2AD /* TokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -444,6 +446,7 @@
 				FDC1B92C2CF890200022B2AD /* PositionModel.swift */,
 				FD67961C2CF747F000A7B58B /* UserDetails.swift */,
 				FDC1B92E2CF89C270022B2AD /* UserPostResponse.swift */,
+				FDC1B9502CFC96BD0022B2AD /* TokenResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				7F15CCC42CEF860400EEC811 /* TabBarController.swift in Sources */,
 				7F0606DD2CEF59B500790531 /* AppDelegate.swift in Sources */,
 				FDC1B94B2CFA0B510022B2AD /* SignUpInfoViewController.swift in Sources */,
+				FDC1B9512CFC96BD0022B2AD /* TokenResponse.swift in Sources */,
 				FD6796112CF60F8500A7B58B /* NetworkError.swift in Sources */,
 				7F0606DF2CEF59B500790531 /* SceneDelegate.swift in Sources */,
 				7F15CCF22CF0D6D600EEC811 /* BaseTableViewCell.swift in Sources */,

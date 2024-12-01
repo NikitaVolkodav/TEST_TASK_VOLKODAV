@@ -43,8 +43,8 @@ final class NetworkManager {
     }
     
     private func performRequest<T: Decodable>(with url: URL,
+                                              decodingType: T.Type = T.self,
                                               completion: @escaping (Result<T, NetworkError>) -> Void) {
-        
         guard isNetworkReachable() else {
             completion(.failure(.noInternetConnection))
             return
@@ -54,7 +54,7 @@ final class NetworkManager {
             switch response.result {
             case .success(let data):
                 do {
-                    let result = try JSONDecoder().decode(T.self, from: data)
+                    let result = try JSONDecoder().decode(decodingType, from: data)
                     completion(.success(result))
                 } catch {
                     completion(.failure(.decodingError))
@@ -103,41 +103,14 @@ extension NetworkManager: NetworkSignUp {
             return
         }
         
-        AF.request(url, method: .get)
-            .validate()
-            .responseData { response in
-                if let statusCode = response.response?.statusCode {
-                    print("Token Request Status Code: \(statusCode)")
-                }
-                switch response.result {
-                case .success(let data):
-                    do {
-                        if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-                           let token = json["token"] as? String {
-                            print("Token successfully retrieved: \(token)")
-                            completion(.success(token))
-                        } else {
-                            print("Token not found in response.")
-                            completion(.failure(.decodingError))
-                        }
-                    } catch {
-                        print("Decoding error: \(error.localizedDescription)")
-                        completion(.failure(.decodingError))
-                    }
-                case .failure(let error):
-                    print("Token request failed: \(error.localizedDescription)")
-                    if let httpResponse = response.response {
-                        switch httpResponse.statusCode {
-                        case 401:
-                            completion(.failure(.unauthorized))
-                        default:
-                            completion(.failure(.invalidResponse))
-                        }
-                    } else {
-                        completion(.failure(.networkError))
-                    }
-                }
+        performRequest(with: url, decodingType: TokenResponse.self) { result in
+            switch result {
+            case .success(let tokenResponse):
+                completion(.success(tokenResponse.token))
+            case .failure(let error):
+                completion(.failure(error))
             }
+        }
     }
     
     func createUser(name: String,
@@ -174,7 +147,7 @@ extension NetworkManager: NetworkSignUp {
                 } catch {
                     completion(.failure(.decodingError))
                 }
-            case .failure(let error):
+            case .failure(_):
                 if let httpResponse = response.response {
                     switch httpResponse.statusCode {
                     case 401:
@@ -192,6 +165,4 @@ extension NetworkManager: NetworkSignUp {
             }
         }
     }
-    
-    
 }

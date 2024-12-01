@@ -87,5 +87,4 @@ extension SingUpViewController: UITextFieldDelegate {
             contentView.setDefaultPhotoTextField()
         }
     }
-     
 }

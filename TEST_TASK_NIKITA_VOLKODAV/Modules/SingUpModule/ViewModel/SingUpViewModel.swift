@@ -13,7 +13,7 @@ final class SingUpViewModel {
     private var phone: String = ""
     
     @ObservableValue var isLoading: Bool = false
-
+    
     func loadPositions() {
         isLoading = true
         
@@ -35,6 +35,27 @@ final class SingUpViewModel {
         }
     }
     
+    func updateName(_ newName: String) {
+        name = newName
+    }
+    
+    func updateEmail(_ newEmail: String) {
+        email = newEmail
+    }
+    
+    func updatePhone(_ newPhone: String) {
+        phone = newPhone
+    }
+    
+    func canEnableSignUpButton() -> Bool {
+        return ValidationService.isValidName(name) &&
+        ValidationService.isValidEmail(email) &&
+        ValidationService.isValidPhone(phone) &&
+        imageStorageService.isImageAdded()
+    }
+}
+//MARK: - Network POST
+extension SingUpViewModel {
     func createUser() {
         guard let photoData = imageStorageService.getImage()?.jpegData(compressionQuality: 0.8) else {
             return
@@ -51,10 +72,9 @@ final class SingUpViewModel {
                                   token: token) { result in
             switch result {
             case .success(let response):
-                print("User registered successfully: \(response)")
                 self.handleCreateUserResponse(result: response)
-            case .failure(let error):
-                print("Failed to register user: \(error)")
+            case .failure(_):
+                break
             }
         }
     }
@@ -68,27 +88,8 @@ final class SingUpViewModel {
             return
         }
     }
-    
-    func updateName(_ newName: String) {
-        name = newName
-    }
-
-    func updateEmail(_ newEmail: String) {
-        email = newEmail
-    }
-
-    func updatePhone(_ newPhone: String) {
-        phone = newPhone
-    }
-
-    func canEnableSignUpButton() -> Bool {
-        return ValidationService.isValidName(name) &&
-        ValidationService.isValidEmail(email) &&
-        ValidationService.isValidPhone(phone) &&
-        imageStorageService.isImageAdded()
-    }
 }
-//MARK: - Network
+//MARK: - Network Positions
 private extension SingUpViewModel {
     func getPositions(completion: @escaping () -> Void) {
         networkManager.getPositions { [weak self] result in
@@ -98,8 +99,8 @@ private extension SingUpViewModel {
             case .success(let success):
                 positionModel = success
                 selectedPositionId = success.positions.first?.id ?? 1
-            case .failure(let failure):
-                print(failure)
+            case .failure(_):
+                break
             }
         }
     }
@@ -111,8 +112,8 @@ private extension SingUpViewModel {
             switch result {
             case .success(let token):
                 self.saveToken(token)
-            case .failure(let error):
-                print("Failed to get token: \(error)")
+            case .failure(_):
+                break
             }
         }
     }
